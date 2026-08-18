@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Scraper cache: ~2.5 MB of Esri's own patch HTML. Re-created on demand by
+# `python scrape_bugs.py`; the derived data is committed as CSV instead, so
+# there is no need to redistribute Esri's page content.
+cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

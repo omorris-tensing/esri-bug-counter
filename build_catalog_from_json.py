@@ -2,15 +2,15 @@
 build_catalog_from_json.py
 
 Fetches https://content.esri.com/patch_notification/patches.json, filters to
-security-marked patches released in the last 3 years (>= 2023-01-01), and writes
-patches_catalog.json (the raw filtered list) plus patches_catalog.csv (the
-columns the scraper consumes).
+security-marked patches released since MIN_DATE, and writes patches_catalog.json
+(the raw filtered list) plus patches_catalog.csv (the columns the scraper
+consumes).
 
 The Esri JSON is the authoritative source of which patches Esri itself flags as
 "Critical: security". We then hand-augment with a small set of non-security-flagged
 patches that nonetheless list security vulnerabilities in their issue text
-(ArcGIS Web Adaptor Stability, ArcGIS Workflow Manager Server patches) so the
-report captures them too.
+(ArcGIS Web Adaptor, ArcGIS Workflow Manager Server and ArcGIS Data Store
+patches, listed in EXTRA_PATCHES) so the report captures them too.
 """
 
 from __future__ import annotations
@@ -61,7 +61,8 @@ EXTRA_PATCHES = [
     },
 ]
 
-MIN_DATE = datetime(2023, 1, 1)
+# Start of the reporting window. Everything released before this is ignored.
+MIN_DATE = datetime(2021, 1, 1)
 
 
 def parse_date(s: str) -> datetime | None:
@@ -70,7 +71,7 @@ def parse_date(s: str) -> datetime | None:
             return datetime.strptime(s, fmt)
         except ValueError:
             continue
-MIN_DATE = datetime(2021, 1, 1)
+    return None
 
 
 def product_from_name(name: str, products: str) -> str:
@@ -136,7 +137,6 @@ def main() -> int:
     # Consolidate those into a single row per (name, product, year), keeping the
     # latest release's URL so the catalog isn't flooded with near-identical entries.
     latest_per_group: dict[tuple[str, str, int], tuple[dict, datetime]] = {}
-    deferred_groups: set[tuple[str, str, int]] = set()
     for p in all_patches:
         critical = (p.get("Critical") or "").lower()
         is_security = critical == "security"
@@ -146,17 +146,15 @@ def main() -> int:
         rd = parse_date(p.get("ReleaseDate", ""))
         if rd is None or rd < MIN_DATE:
             continue
-        url = p.get("url", "")
         product = product_from_name(name, p.get("Products", ""))
         group_key = (name.strip().lower(), product, rd.year)
         prev = latest_per_group.get(group_key)
         if prev is None or rd > prev[1]:
             latest_per_group[group_key] = (p, rd)
-        deferred_groups.add(group_key)
 
     # Emit one row per group, using the latest release's URL. Skip groups whose
     # latest URL was already seen under a different group (defensive dedupe).
-    for group_key in sorted(deferred_groups, key=lambda k: latest_per_group[k][1]):
+    for group_key in sorted(latest_per_group, key=lambda k: latest_per_group[k][1]):
         p, rd = latest_per_group[group_key]
         url = p.get("url", "")
         if url in seen_urls:
@@ -169,7 +167,7 @@ def main() -> int:
     filtered.sort(key=lambda t: parse_date(t[0].get("ReleaseDate", "")))
 
     print(f"Security patches since {MIN_DATE.date()}: {len(filtered)} "
-          f"(consolidated from {len(deferred_groups)} per-version groups)")
+          f"(consolidated from {len(latest_per_group)} per-version groups)")
 
     # Build a unified list, including extras
     rows = []
