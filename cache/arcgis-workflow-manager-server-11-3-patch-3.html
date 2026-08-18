@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en-us" dir="ltr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArcGIS Workflow Manager Server 11.3 Patch 3</title>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="template" content="esri-content-template">
+  <meta name="content-page-ref" content="phEpOqruFZCWc1ZaDLOlzX1WzjybFTBZQoLI25CQlRIlSTjuaVVb_ZF-9r9Cq4X5hHMysYgx8t2iyKWSwEuHjQbj5iPm9Z77c5mTUKjDo-aYc2LM01_-4mRFQu7CKsip1MTx1Kor7L9Z_r_OXJWRXA"/>
+<script defer="defer" type="text/javascript" src="/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js"></script>
+<link rel="canonical" href="https://support.esri.com/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3">
+  <link rel="preconnect" href="//webapps-cdn.esri.com" crossorigin>
+  <link rel="preconnect" href="//js.arcgis.com" crossorigin>
+  <link rel="preconnect" href="//assets.adobedtm.com">
+  <link rel="preconnect" href="//fast.fonts.net" crossorigin>
+  <link rel="stylesheet" href="https://fast.fonts.net/t/1.css?apiType=css&amp;projectid=f9e335c8-e150-4885-976e-f4c392e562c4">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.2/fonts.css">
+  <link rel="dns-prefetch" href="//pi.pardot.com">
+  <link rel="dns-prefetch" href="//js-cdn.dynatrace.com">
+  <link rel="dns-prefetch" href="//cdn.cookielaw.org">
+  <link rel="dns-prefetch" href="//api.company-target.com">
+  <link rel="dns-prefetch" href="//securetags.esri.com">
+  <link rel="dns-prefetch" href="//environmentals.tt.omtrdc.net">
+  <link rel="dns-prefetch" href="//geolocation.onetrust.com">
+  <link rel="modulepreload" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js" crossorigin>
+  <link rel="preload" as="style" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" crossorigin>
+  <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" type="text/css" crossorigin>
+  <link rel="preload" as="style" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" type="text/css" crossorigin="anonymous">
+  <script type="module" src="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js"></script>
+  <script type="text/javascript">
+  window.gnav_jsonPath = "/content/experience-fragments/esri-sites/en-us/site-settings/global-navigation-config/2022-nav-config.25.json"
+</script>
+  <script>
+  window.gnav_mode = ""
+  window.window.gnav_login = ""
+  window.window.gnav_collapseMenus = "" === 'true'
+</script>
+  <script src="https://geoip.esri.com/geoip.js"></script>
+  <style>
+  :root {
+    --secondarytheme-color: oklch(from #62b346 l c h);
+
+    --theme-color: oklch(from #62b346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62b346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+
+    --theme-color-dark: oklch(from #62b346 l c h);
+    --theme-color-dark10: oklch(from var(--theme-color-dark) l c h / 10%);
+    --theme-color-dark50: oklch(from var(--theme-color-dark) l c h / 50%);
+    --theme-color-secondary-dark: oklch(from var(--esri-ui-brand-default) l c h);
+    --theme-color-secondary-dark10: oklch(from var(--theme-color-secondary-dark) l c h / 10%);
+    --theme-color-secondary-dark50: oklch(from var(--theme-color-secondary-dark) l c h / 50%);
+  }
+
+  .calcite-mode-dark {
+    --theme-color: var(--theme-color-dark);
+    --theme-color10: var(--theme-color-dark10);
+    --theme-color50: var(--theme-color-dark50);
+    --theme-color-secondary: var(--theme-color-secondary-dark);
+    --theme-color-secondary10: var(--theme-color-secondary-dark10);
+    --theme-color-secondary50: var(--theme-color-secondary-dark50);
+  }
+
+  .calcite-mode-light {
+    --theme-color: oklch(from #62b346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62b346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+  }
+
+  .theme-secondary {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+
+  .theme-secondary .calcite-mode-light {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+  .theme-secondary .calcite-mode-dark {
+    --theme-color: var(--theme-color-secondary-dark);
+    --theme-color10: var(--theme-color-secondary-dark10);
+    --theme-color50: var(--theme-color-secondary-dark50);
+  }
+</style>
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-180.png">
+  <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-dark-32.png">
+  <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-32.png">
+  <link rel="icon" type="image/svg+xml" sizes="16x16 32x32 48x48 180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon.svg">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3" hreflang="en-us">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3" hreflang="x-default">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site">
+  <meta name="twitter:title" content="ArcGIS Workflow Manager Server 11.3 Patch 3">
+  <meta property="twitter:url" content="https://support.esri.com/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3">
+  <meta name="twitter:description">
+  <meta property="twitter:image" content="https://www.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg">
+  <meta property="fb:app_id">
+  <meta property="og:title" content="ArcGIS Workflow Manager Server 11.3 Patch 3">
+  <meta property="og:url" content="https://support.esri.com/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3">
+  <meta property="og:description">
+  <meta property="og:image" content="https://www.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg">
+  <meta property="og:type" content="website">
+  <meta name="date-sort" content="02/25/2026">
+  <meta name="last-modified" content="02/25/2026">
+  <meta name="created" content="Wed, 25 Feb 2026 22:30:27 GMT">
+  <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "WebPage",
+       "name": "ArcGIS Workflow Manager Server 11.3 Patch 3",
+        "sourceOrganization" : {
+            "@type": "Organization",
+            "name" : "Esri"
+            },
+            "url": "https://support.esri.com/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3",
+            "image": "https://support.esri.com/content/dam/esrisites/en-us/support/technical-support/patches-updates.jpg",
+            "inLanguage" : {
+                "@type": "Language",
+                "name": "en-us"
+            },
+            "description":""
+        }
+    </script> <!-- Sitelinks Search Box --> <!-- breadcrumb -->
+  <script type="application/ld+json" id="breadcrumbs">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement":  [{"@type":"ListItem","position":1,"name":"Patches and Updates","item":"/en-us/patches-updates"},{"@type":"ListItem","position":2,"name":"2026","item":"/en-us/patches-updates"},{"@type":"ListItem","position":3,"name":"ArcGIS Workflow Manager Server 11.3 Patch 3","item":"/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3"}]
+ }
+</script>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="product" content="ArcGIS Enterprise,ArcGIS Server,ArcGIS Workflow Manager Server">
+  <meta name="version" content="11.3">
+  <meta name="first-published" content="02/25/2026">
+  <meta name="search-category" content="downloads/patches-servicepacks">
+  <meta name="sub-category" content="patches-servicepack">
+  <meta name="operating-system" content="linux,windows">
+  <meta name="cardtype" content="patches and updates">
+  <meta name="search-collection" content="patches-servicepacks">
+  <script src="/etc.clientlibs/esri-sites/clientlibs/datalayer.js"></script>
+  <script>
+  window.dataLayer = Object.assign({}, window.dataLayer, {
+    pageTitle: "Arcgis Workflow Manager Server 11.3 Patch 3",
+    pageName: "Patches And Updates:2026:Arcgis Workflow Manager Server 11.3 Patch 3",
+    pagePath: "/content/support/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3",
+    pageType: "",
+    pageSubType: "",
+    metaOgTitle: "ArcGIS Workflow Manager Server 11.3 Patch 3",
+    metaOgUrl: "https://support.esri.com/en-us/patches-updates/2026/arcgis-workflow-manager-server-11-3-patch-3",
+    metaOgDescription: "",
+    metaOgImage: "https://www.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg",
+    datePublished: "",
+    domain: window.location.host,
+    environment: "crx3composite,nosamplecontent,publish,cloud\u002Dready",
+    hierarchy1: "Patches And Updates",
+    hierarchy2: "2026",
+    hierarchy3: "",
+    hierarchy4: "",
+    locale: "en-us",
+    resourceType: "esri-sites/components/pages/editablecontentpage",
+    template: "/conf/esri-sites/support/settings/wcm/templates/esri-content-template",
+    language: "en",
+    countryCode: "us",
+    tags: "adobe\u002Danalytics\u002D\u002D\u002Donly\u002Dfor\u002Dsites:page\u002Dtype\/support",
+  })
+</script>
+  <script type="text/javascript">
+  window.storeVariables = Object.assign({}, window.storeVariables, {
+    eCommUrl: "https://support.esri.com/api/ecomm",
+    lookupUrl: "https://ecomm-api.esri.com/lookup",
+    accountsUrl: "https://support.esri.com/en-us/signin",
+    checkoutUrl: "https://support.esri.com/checkout",
+    cartUrl: "https://support.esri.com/en-us/store/cart",
+    customerNumberUrl: "https://support.esri.com/en-us/store/customer-number",
+  })
+</script>
+  <meta name="color theme" content="62b346"> <!-- /* Clientlibs */ -->
+  <link rel="stylesheet" href="/etc.clientlibs/esri-sites/clientlibs/components.css" type="text/css">
+  <script type="text/javascript" src="//assets.adobedtm.com/2d251f50426c/e52f833be42a/launch-EN26af1ee4ef084984926fd80d1cb93835.min.js"></script>
+  <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/event-detail/clientlibs.css" type="text/css">
+ </head>
+ <body class="editablecontentpage page basicpage support-chat" id="editablecontentpage-738637e49d" data-instant-intensity="viewport">
+  <div class="cmp-page__skiptomaincontent"><a class="cmp-page__skiptomaincontent-link" href="#main-content">Skip to main content</a>
+  </div>
+  <link rel="stylesheet" href="/etc.clientlibs/core/wcm/components/page/v2/page/clientlibs/site/skiptomaincontent.css" type="text/css">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/global-nav/css/gn.css">
+  <script src="https://webapps-cdn.esri.com/CDN/components/global-nav/js/gn.js"></script>
+  <header id="globalnav" aria-label="Main" class="calcite-mode-light"></header>
+  <main id="main-content">
+   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    <div class="local-navigation aem-GridColumn aem-GridColumn--default--12">
+     <nav id="second-nav" domain="" navtype="existingNavigation" path="/content/support/en-us/overview"></nav>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-4
+  padding-trailer-2
+  has-background
+  has-background--color
+  
+  has-background--cover
+  
+  " style="--bg-color: #EDF8FF;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-2f6418c419" class="cmp-container">
+        <div class="experiencefragment">
+         <div class="xf-content-height">
+          <div class="root responsivegrid">
+           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+            <div class="simple-search aem-GridColumn aem-GridColumn--default--12">
+             <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.css" type="text/css">
+             <script defer src="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.js"></script>
+             <div class="sra-search-field">
+              <form id="sraForm" data-search-path="https://support.esri.com/en-us/search"><calcite-input placeholder="Search" icon="magnifying-glass" scale="l"></calcite-input>
+              </form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-2
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-cdc50f9fd0" class="cmp-container">
+        <div class="columnsystem">
+         <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/layouts/columnsystem/clientlibs.css" type="text/css">
+         <div class="column-10 tablet-column-8 phone-column-6 trailer-2" data-aem-columnsys="column-10 trailer-2">
+          <div id="container-2eec54a31a" class="cmp-container">
+           <div class="esri-text">
+            <div class="esri-text-container">
+             <div data-icon="/content/dam/esrisites/en-us/common/icons/meridian-/app-update-64.svg" class="esri-text__iconContainer">
+              <svg id="icon-ui-svg" class="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 64 64">
+               <path d="M37 50.626l-9.97 4.72L6.1 48.813V16.472l20.87-9.817 20.93 6.47v16.93c-.27.024-.535.06-.8.1v-16.44L27.03 7.51 6.9 16.979v31.247l20.07 6.262L37 49.741zM59.1 43a10.082 10.082 0 0 1-18.904 4.9H47v-.8h-7.9V55h.8v-6a10.9 10.9 0 0 0 20-6zm-20.2 0h-.8a10.9 10.9 0 0 1 20-6v-6h.8v7.9H51v-.8h6.804A10.082 10.082 0 0 0 38.9 43z" id="icon-ui-svg--base" />
+              </svg>
+             </div>
+             <p class="esri-text__category" id="a8a75b454f646e9580302ac6a84beccb7e452018871159284bc67015f27cfc92">Patches and updates</p>
+             <h1 class="esri-text__title" aria-describedby="a8a75b454f646e9580302ac6a84beccb7e452018871159284bc67015f27cfc92">ArcGIS Workflow Manager Server 11.3 Patch 3 (Windows | Linux)</h1>
+            </div>
+           </div>
+           <div class="raw-html-for-js-app">
+            <div style="background-color:white; padding-top: 10px"><calcite-chip scale="m" appearance="solid" color="grey">
+              Published: Feb 25, 2026
+             </calcite-chip>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="separator">
+         <hr class="separator full-width left-align">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+      <div class="grid-container ">
+       <div id="container-b28e9518a7" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-6 tablet-column-12 phone-column-12" data-aem-columnsys="column-6">
+          <div id="container-db2f109218" class="cmp-container">
+           <nav data-cmp-is="toc" class="esri-toc">
+            <div class="cmp-toc__content" id="tableofcontents-e6ccd98805">
+             <ul>
+              <li><a href="#summary">Summary</a></li>
+              <li><a href="#issues-addressed-with-this-patch">Issues addressed with this Patch</a></li>
+              <li><a href="#installing-this-patch-on-windows">Installing this patch on Windows</a></li>
+              <li><a href="#installing-this-patch-on-linux">Installing this patch on Linux</a></li>
+              <li><a href="#how-to-identify-which-arcgis-products-are-installed">How to identify which ArcGIS products are installed</a></li>
+             </ul>
+            </div>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="columnsystem">
+         <div class="column-18" data-aem-columnsys="column-18">
+          <div id="container-4f89031a65" class="cmp-container">
+           <div class="esri-title">
+            <div id="title-3178606acb" class="cmp-title">
+             <h3 class="cmp-title__text" id="summary">Summary</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-6d4186349d" class="cmp-text">
+             <p>ArcGIS Workflow Manager Server 11.3 Patch 3 resolves several issues that impact usability of Workflow Manager Server and is recommended for all users of ArcGIS Workflow Manager Server.&nbsp;</p>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-849772d3e2" class="cmp-title">
+             <h3 class="cmp-title__text" id="issues-addressed-with-this-patch">Issues addressed with this Patch</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-a3ea4cfc8c" class="cmp-text">
+             <ul>
+              <li>BUG-000176850: Unable to create jobs when one of the workflow manager services is stopped in HA environment.</li>
+              <li>Security vulnerability allowing Workflow Administrators to access encrypted user-defined setting values.</li>
+             </ul>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-188f13372b" class="cmp-title">
+             <h3 class="cmp-title__text" id="installing-this-patch-on-windows">Installing this patch on Windows</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-5629aef9c4" class="cmp-text">
+             <p style="	margin-left: 40.0px;
+"><b>Note: </b>Before installing this patch, stop all running Workflow Manager services. After patch installation, restart the services.</p>
+             <p style="	margin-left: 40.0px;
+">ArcGIS Workflow Manager Server must be installed on your system before you can install a patch.<br></p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 1:</b> Download the file to a location other than your ArcGIS Workflow Manager installation location.</p>
+             <p style="	margin-left: 80.0px;
+">Patch file:&nbsp;<a href="https://gisupdates.esri.com/Workflow_Manager/QFEs/WMX_113/WorkflowManagerServer-11.3-Patch3.msp" target="_blank" rel="noopener noreferrer">WorkflowManagerServer-11.3-Patch3.msp</a></p>
+             <p style="	margin-left: 80.0px;
+">Checksum (SHA256):&nbsp;006e6693f5ce6e87e7f1ccf9737697477db38702f776be40e66d99af8a4258af</p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 2:&nbsp;</b>Make sure you have write access to the Workflow Manager Server installation location, and that no one is accessing it.</p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 3</b>: Double-click the MSP file to start the setup process.&nbsp; When Setup starts, follow the instructions on your screen.</p>
+             <p style="	margin-left: 120.0px;
+">If the MSP file does not start the setup installation, you can start the setup installation manually by using the following command:</p>
+             <p style="	margin-left: 120.0px;
+"><code>msiexec.exe /p [location of Patch]\WorkflowManagerServer-11.3-Patch3.msp</code></p>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-c6bfb5249f" class="cmp-title">
+             <h3 class="cmp-title__text" id="installing-this-patch-on-linux">Installing this patch on Linux</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-8be023957e" class="cmp-text">
+             <p style="	margin-left: 40.0px;
+"><b>Note: </b>Before installing this patch, stop all running Workflow Manager services. After patch installation, restart the services.</p>
+             <p style="	margin-left: 40.0px;
+">ArcGIS Workflow Manager Server must be installed on your system before you can install a patch.</p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 1:&nbsp;</b>Download the patch file to a location other than your ArcGIS Workflow Manager installation location.<br></p>
+             <p style="	margin-left: 80.0px;
+">Patch file:&nbsp;<a href="//gisupdates.esri.com/Workflow_Manager/QFEs/WMX_113/WorkflowManagerServer-11.3-Patch3.tar.gz" target="_blank" rel="noopener noreferrer">WorkflowManagerServer-11.3-Patch3.tar.gz</a></p>
+             <p style="	margin-left: 80.0px;
+">Checksum (SHA256):&nbsp;b62c3122779db2258ebea220d101ad38e8e4b81e41c419137d8fae60e1f9e99d</p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 2:&nbsp;</b>Log in as the user that installed ArcGIS Server.&nbsp;The Install owner is the owner of the arcgis folder.</p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 3:</b> Make sure you have write access to the ArcGIS Workflow Manager Server installation location, and that no one is using it.<br></p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 4:</b>&nbsp;Extract the package:&nbsp; <code>% tar -xvf WorkflowManagerServer-11.3.Patch3.tar.gz</code><br></p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 5:</b>&nbsp;If needed, mark the Patch.sh file as executable:&nbsp; <code>% chmod +x Patch.sh</code></p>
+             <p style="	margin-left: 40.0px;
+"><b>Step 6:&nbsp;</b>Start the installation process:&nbsp; <code>% ./WorkflowManagerServer/Patch.sh</code></p>
+            </div>
+           </div>
+           <div class="separator">
+            <hr class="separator full-width left-align">
+           </div>
+           <div class="esri-title">
+            <div id="title-a3973589f5" class="cmp-title">
+             <h3 class="cmp-title__text" id="how-to-identify-which-arcgis-products-are-installed">How to identify which ArcGIS products are installed</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-9abcdc533a" class="cmp-text">
+             <p>To determine which ArcGIS products are installed, choose the appropriate version of the PatchFinder utility for your environment and run it from your local machine. PatchFinder will list products, hot fixes, and patches installed on your local machine.</p>
+             <ul>
+              <li><a href="https://downloads.esri.com/Support/downloads/other_/PatchFinder.exe">PatchFinder for Windows</a></li>
+              <li><a href="https://downloads.esri.com/Support/downloads/other_/PatchFinder.tar">PatchFinder for Linux/Unix</a></li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+      <div class="grid-container ">
+       <div id="container-b5582e2273" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-12 pre-6" data-aem-columnsys="column-12">
+          <div id="container-0828e5f5e2" class="cmp-container">
+           <div class="experiencefragment">
+            <div class="xf-content-height">
+             <div class="root responsivegrid">
+              <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+               <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+                <style>
+#feedback{
+    text-align: center;
+}
+
+#feedback .withborder{
+border-bottom: 1px solid #cacaca;
+}
+#feedback .esri-title,  .raw-html-for-js-app{
+display:inline-block;
+}
+#feedback .technical-feedback-top .cmp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+flex-wrap: wrap;
+}
+
+
+.feedback-link{
+margin-bottom: 0;
+    padding-top: 13px;
+}
+
+.more-help-section svg{
+height:auto;
+width:48px;
+}
+</style>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-0
+  trailer-2
+  padding-leader-0
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-6341cd840f" class="cmp-container">
+                   <div class="columnsystem">
+                    <div class="column-12" data-aem-columnsys="column-12">
+                     <div id="container-89b7cfb869" class="cmp-container">
+                      <div class="raw-html-for-js-app">
+                       <style>
+
+.esri-technical-info-contact {
+    margin: var(--space-4) 0 var(--space-16);
+    padding-block-end: var(--space-10);
+    background:  #edf8ff;
+}
+
+.esri-technical-info-contact .feedback-section {
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid var(--calcite-ui-border-1);
+    padding-bottom: var(--space-6);
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section {
+        flex-direction: row;
+    }
+}
+.esri-technical-info-contact .feedback-section span {
+    margin-right: var(--space-4);
+}
+.esri-technical-info-contact .feedback-section .feedback-section-click {
+    text-align: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-click {
+        border-right: 1px solid var(--calcite-ui-border-1);
+        padding-inline-end: var(--space-8);
+    }
+}
+.esri-technical-info-contact .feedback-section .feedback-section-email {
+    text-align: center;
+    padding-top: var(--space-3);
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-email {
+        padding-inline-start: var(--space-8);
+        padding-top: 0;
+    }
+}
+.esri-technical-info-contact .more-help-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 760px) {
+    .esri-technical-info-contact .more-help-section {
+        flex-direction: row;
+    }
+}
+
+.esri-technical-info-contact .more-help-section div {
+    flex-basis: 50%;
+    text-align: center;
+    padding-block-start:var(--space-10);
+}
+
+.esri-technical-info-contact .more-help-section img,
+.esri-technical-info-contact .more-help-section svg {
+    width: 48px;
+    fill: var(--theme-color-secondary);
+}
+
+  </style>
+                       <div class="esri-technical-info column-24">
+                        <div class="esri-technical-info-details column-18">
+                         <div class="esri-technical-info-contact">
+                          <div class="more-help-section">
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svgz" viewbox="0 0 48 48">
+                             <path d="M20 12.086C9.027 12.086.1 18.176.1 25.662c0 4 2.483 7.504 7.185 10.151l-2.275 6.34 10.31-3.596c.538.066 3.179.38 4.68.38 11.159 0 19.9-5.83 19.9-13.275 0-7.486-8.927-13.576-19.9-13.576zm0 26.052c-1.592 0-4.644-.383-4.674-.387l-.093-.011-8.904 3.106 1.94-5.406-.302-.164C4.743 33.522.9 30.43.9 25.662c0-7.044 8.568-12.776 19.1-12.776s19.1 5.732 19.1 12.776c0 6.996-8.39 12.476-19.1 12.476zm23.335-23.055l.47.646-2.424 1.767-.47-.646zm-7.517-2.822l-.681-.419 1.57-2.556.681.42zM47 24.101v.799h-3v-.8zm-27.5.374a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0zM9.5 24.475a1.025 1.025 0 1 0 1.025 1.025A1.026 1.026 0 0 0 9.5 24.475zM9.275 25.5a.225.225 0 1 1 .45 0c0 .248-.45.248-.45 0zM29.5 24.475a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Get help from ArcGIS experts</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/contact.html">
+                             Contact technical support
+                            </calcite-link>
+                           </div>
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
+                             <path d="M23.138 37l-.55 1.1h3.823l-.55-1.1h.895l.95 1.9h-6.412l.95-1.9zm19.96-1.9H6v.8h37.099zm-8.09-14.2H37v-.8h-1.993zM46.9 37.474V39.5a4.405 4.405 0 0 1-4.4 4.4h-36a4.405 4.405 0 0 1-4.4-4.4v-2.026h.021a3.374 3.374 0 0 1 .283-1.38l7.27-16A3.405 3.405 0 0 1 12.77 18.1h1.237v.8H12.77a2.602 2.602 0 0 0-2.367 1.524l-7.27 16A2.6 2.6 0 0 0 5.499 40.1h38.002a2.6 2.6 0 0 0 2.366-3.676l-7.27-16A2.602 2.602 0 0 0 36.23 18.9h-1.223v-.8h1.223a3.405 3.405 0 0 1 3.095 1.993l7.27 16a3.372 3.372 0 0 1 .284 1.38zm-.818 2.197a3.362 3.362 0 0 1-2.581 1.229H5.499a3.364 3.364 0 0 1-2.581-1.229 3.595 3.595 0 0 0 3.582 3.43h36a3.595 3.595 0 0 0 3.582-3.43zM12 20.9h2.007v-.8H12zM24.507.1c-5.495 0-8.4 2.183-8.4 6.313v16.329l8.4 8.455 8.4-8.455V6.412c0-4.13-2.905-6.312-8.4-6.312zm7.6 22.312l-7.6 7.65-7.6-7.65v-16c0-3.657 2.557-5.512 7.6-5.512s7.6 1.855 7.6 5.513zM24.506 5.1a4.4 4.4 0 1 0 4.4 4.4 4.405 4.405 0 0 0-4.4-4.4zm0 8a3.6 3.6 0 1 1 3.6-3.6 3.604 3.604 0 0 1-3.6 3.6z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Download the Esri Support App</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/app.html">
+                             Go to download options
+                            </calcite-link>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-72b2286c65" class="cmp-container">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+     <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/css/support-ai-chatbot.css">
+     <div id="support-ai-chatbot"></div>
+     <script defer src="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/js/support-ai-chatbot.js"></script>
+    </div>
+   </div>
+  </main>
+  <script defer src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+  <script defer src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/container.js"></script>
+  <script defer src="/etc.clientlibs/esri-sites/clientlibs/components.js"></script>
+  <div hidden>
+   <span id="new-window">opens in new window</span>
+  </div> <calcite-modal id="page-modal" scale="m" width="m" aria-modal="true" role="dialog">
+   <div slot="header"></div>
+   <div slot="content"></div> 
+  </calcite-modal>
+  <div id="live-region" class="assistText" aria-live="polite"></div>
+  <script src="https://webapps-cdn.esri.com/CDN/packages/instant.page/instantpage.min.js"></script>
+  <script src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"></script>
+  <script type="text/javascript">_satellite.pageBottom();</script>
+  <script src="/etc.clientlibs/esri-sites/clientlibs/clientlib-dependencies.js"></script>
+ </body>
+</html>

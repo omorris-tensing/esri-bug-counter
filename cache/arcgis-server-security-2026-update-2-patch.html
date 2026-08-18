@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en-us" dir="ltr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArcGIS Server Security 2026 Update 2 Patch</title>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="template" content="arcgis-server---patches---updates">
+  <meta name="content-page-ref" content="phEpOqruFZCWc1ZaDLOlzX1WzjybFTBZQoLI25CQlRIlSTjuaVVb_ZF-9r9Cq4X5IZfgNo-sjGeana1BbgZYZcKzr5Er1xh3HLZ2pzQB8vJHsymtR_MgWxeR7hNMg6Pg0wqlJQdILb2lTTDSCnvLow"/>
+<script defer="defer" type="text/javascript" src="/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js"></script>
+<link rel="canonical" href="https://support.esri.com/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch">
+  <link rel="preconnect" href="//webapps-cdn.esri.com" crossorigin>
+  <link rel="preconnect" href="//js.arcgis.com" crossorigin>
+  <link rel="preconnect" href="//assets.adobedtm.com">
+  <link rel="preconnect" href="//fast.fonts.net" crossorigin>
+  <link rel="stylesheet" href="https://fast.fonts.net/t/1.css?apiType=css&amp;projectid=f9e335c8-e150-4885-976e-f4c392e562c4">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.2/fonts.css">
+  <link rel="dns-prefetch" href="//pi.pardot.com">
+  <link rel="dns-prefetch" href="//js-cdn.dynatrace.com">
+  <link rel="dns-prefetch" href="//cdn.cookielaw.org">
+  <link rel="dns-prefetch" href="//api.company-target.com">
+  <link rel="dns-prefetch" href="//securetags.esri.com">
+  <link rel="dns-prefetch" href="//environmentals.tt.omtrdc.net">
+  <link rel="dns-prefetch" href="//geolocation.onetrust.com">
+  <link rel="modulepreload" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js" crossorigin>
+  <link rel="preload" as="style" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" crossorigin>
+  <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" type="text/css" crossorigin>
+  <link rel="preload" as="style" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" type="text/css" crossorigin="anonymous">
+  <script type="module" src="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js"></script>
+  <script type="text/javascript">
+  window.gnav_jsonPath = "/content/experience-fragments/esri-sites/en-us/site-settings/global-navigation-config/2022-nav-config.25.json"
+</script>
+  <script>
+  window.gnav_mode = ""
+  window.window.gnav_login = ""
+  window.window.gnav_collapseMenus = "" === 'true'
+</script>
+  <script src="https://geoip.esri.com/geoip.js"></script>
+  <style>
+  :root {
+    --secondarytheme-color: oklch(from #62B346 l c h);
+
+    --theme-color: oklch(from #62B346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62B346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+
+    --theme-color-dark: oklch(from #62B346 l c h);
+    --theme-color-dark10: oklch(from var(--theme-color-dark) l c h / 10%);
+    --theme-color-dark50: oklch(from var(--theme-color-dark) l c h / 50%);
+    --theme-color-secondary-dark: oklch(from var(--esri-ui-brand-default) l c h);
+    --theme-color-secondary-dark10: oklch(from var(--theme-color-secondary-dark) l c h / 10%);
+    --theme-color-secondary-dark50: oklch(from var(--theme-color-secondary-dark) l c h / 50%);
+  }
+
+  .calcite-mode-dark {
+    --theme-color: var(--theme-color-dark);
+    --theme-color10: var(--theme-color-dark10);
+    --theme-color50: var(--theme-color-dark50);
+    --theme-color-secondary: var(--theme-color-secondary-dark);
+    --theme-color-secondary10: var(--theme-color-secondary-dark10);
+    --theme-color-secondary50: var(--theme-color-secondary-dark50);
+  }
+
+  .calcite-mode-light {
+    --theme-color: oklch(from #62B346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62B346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+  }
+
+  .theme-secondary {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+
+  .theme-secondary .calcite-mode-light {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+  .theme-secondary .calcite-mode-dark {
+    --theme-color: var(--theme-color-secondary-dark);
+    --theme-color10: var(--theme-color-secondary-dark10);
+    --theme-color50: var(--theme-color-secondary-dark50);
+  }
+</style>
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-180.png">
+  <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-dark-32.png">
+  <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-32.png">
+  <link rel="icon" type="image/svg+xml" sizes="16x16 32x32 48x48 180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon.svg">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch" hreflang="en-us">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch" hreflang="x-default">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site">
+  <meta name="twitter:title" content="ArcGIS Server Security 2026 Update 2 Patch">
+  <meta property="twitter:url" content="https://support.esri.com/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch">
+  <meta name="twitter:description">
+  <meta property="twitter:image" content="https://support.esri.com/content/dam/esrisites/en-us/support/technical-support">
+  <meta property="fb:app_id">
+  <meta property="og:title" content="ArcGIS Server Security 2026 Update 2 Patch">
+  <meta property="og:url" content="https://support.esri.com/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch">
+  <meta property="og:description">
+  <meta property="og:image" content="https://support.esri.com/content/dam/esrisites/en-us/support/technical-support">
+  <meta property="og:type" content="website">
+  <meta name="date-sort" content="05/27/2026">
+  <meta name="last-modified" content="05/27/2026">
+  <meta name="created" content="Wed, 27 May 2026 17:43:38 GMT">
+  <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "WebPage",
+       "name": "ArcGIS Server Security 2026 Update 2 Patch",
+        "sourceOrganization" : {
+            "@type": "Organization",
+            "name" : "Esri"
+            },
+            "url": "https://support.esri.com/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch",
+            "image": "https://support.esri.com/content/dam/esrisites/en-us/support/technical-support/patches-updates.jpg",
+            "inLanguage" : {
+                "@type": "Language",
+                "name": "en-us"
+            },
+            "description":""
+        }
+    </script> <!-- Sitelinks Search Box --> <!-- breadcrumb -->
+  <script type="application/ld+json" id="breadcrumbs">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement":  [{"@type":"ListItem","position":1,"name":"Patches and Updates","item":"/en-us/patches-updates"},{"@type":"ListItem","position":2,"name":"2026","item":"/en-us/patches-updates"},{"@type":"ListItem","position":3,"name":"ArcGIS Server Security 2026 Update 2 Patch","item":"/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch"}]
+ }
+</script>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="product" content="ArcGIS Enterprise,ArcGIS Server">
+  <meta name="version" content="11.1,11.3,11.4,11.5,12.0">
+  <meta name="first-published" content="05/27/2026">
+  <meta name="operating-system" content="linux,windows">
+  <meta name="cardtype" content="patches and updates">
+  <meta name="search-collection" content="patches-servicepacks">
+  <script src="/etc.clientlibs/esri-sites/clientlibs/datalayer.js"></script>
+  <script>
+  window.dataLayer = Object.assign({}, window.dataLayer, {
+    pageTitle: "Arcgis Server Security 2026 Update 2 Patch",
+    pageName: "Patches And Updates:2026:Arcgis Server Security 2026 Update 2 Patch",
+    pagePath: "/content/support/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch",
+    pageType: "",
+    pageSubType: "",
+    metaOgTitle: "ArcGIS Server Security 2026 Update 2 Patch",
+    metaOgUrl: "https://support.esri.com/en-us/patches-updates/2026/arcgis-server-security-2026-update-2-patch",
+    metaOgDescription: "",
+    metaOgImage: "https://support.esri.com/content/dam/esrisites/en-us/support/technical-support",
+    datePublished: "",
+    domain: window.location.host,
+    environment: "crx3composite,nosamplecontent,publish,cloud\u002Dready",
+    hierarchy1: "Patches And Updates",
+    hierarchy2: "2026",
+    hierarchy3: "",
+    hierarchy4: "",
+    locale: "en-us",
+    resourceType: "esri-sites/components/pages/editablecontentpage",
+    template: "/conf/esri-sites/support/settings/wcm/templates/arcgis-server---patches---updates",
+    language: "en",
+    countryCode: "us",
+    tags: "adobe\u002Danalytics\u002D\u002D\u002Donly\u002Dfor\u002Dsites:page\u002Dtype\/support,products:arcgis\u002Denterprise",
+  })
+</script>
+  <script type="text/javascript">
+  window.storeVariables = Object.assign({}, window.storeVariables, {
+    eCommUrl: "https://support.esri.com/api/ecomm",
+    lookupUrl: "https://ecomm-api.esri.com/lookup",
+    accountsUrl: "https://support.esri.com/en-us/signin",
+    checkoutUrl: "https://support.esri.com/checkout",
+    cartUrl: "https://support.esri.com/en-us/store/cart",
+    customerNumberUrl: "https://support.esri.com/en-us/store/customer-number",
+  })
+</script>
+  <meta name="color theme" content="62B346"> <!-- /* Clientlibs */ -->
+  <link rel="stylesheet" href="/etc.clientlibs/esri-sites/clientlibs/components.css" type="text/css">
+  <script type="text/javascript" src="//assets.adobedtm.com/2d251f50426c/e52f833be42a/launch-EN26af1ee4ef084984926fd80d1cb93835.min.js"></script>
+ </head>
+ <body class="editablecontentpage page basicpage" id="editablecontentpage-f0ff78165e" data-instant-intensity="viewport">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/global-nav/css/gn.css">
+  <script src="https://webapps-cdn.esri.com/CDN/components/global-nav/js/gn.js"></script>
+  <header id="globalnav" aria-label="Main" class="calcite-mode-light"></header>
+  <main id="main-content">
+   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    <div class="local-navigation aem-GridColumn aem-GridColumn--default--12">
+     <nav id="second-nav" domain="" navtype="existingNavigation" path="/content/support/en-us/overview"></nav>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-4
+  padding-trailer-2
+  has-background
+  has-background--color
+  
+  has-background--cover
+  
+  " style="--bg-color: #EDF8FF;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-09aa33070c" class="cmp-container">
+        <div class="experiencefragment">
+         <div class="xf-content-height">
+          <div class="root responsivegrid">
+           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+            <div class="simple-search aem-GridColumn aem-GridColumn--default--12">
+             <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.css" type="text/css">
+             <script defer src="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.js"></script>
+             <div class="sra-search-field">
+              <form id="sraForm" data-search-path="https://support.esri.com/en-us/search"><calcite-input placeholder="Search" icon="magnifying-glass" scale="l"></calcite-input>
+              </form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-2
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-c0aabf535f" class="cmp-container">
+        <div class="columnsystem">
+         <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/layouts/columnsystem/clientlibs.css" type="text/css">
+         <div class="column-10 tablet-column-8 phone-column-6 trailer-2" data-aem-columnsys="column-10 trailer-2">
+          <div id="container-d246f938f6" class="cmp-container">
+           <div class="esri-text">
+            <div class="esri-text-container">
+             <div data-icon="/content/dam/esrisites/en-us/common/icons/meridian-/app-update-64.svg" class="esri-text__iconContainer">
+              <svg id="icon-ui-svg" class="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 64 64">
+               <path d="M37 50.626l-9.97 4.72L6.1 48.813V16.472l20.87-9.817 20.93 6.47v16.93c-.27.024-.535.06-.8.1v-16.44L27.03 7.51 6.9 16.979v31.247l20.07 6.262L37 49.741zM59.1 43a10.082 10.082 0 0 1-18.904 4.9H47v-.8h-7.9V55h.8v-6a10.9 10.9 0 0 0 20-6zm-20.2 0h-.8a10.9 10.9 0 0 1 20-6v-6h.8v7.9H51v-.8h6.804A10.082 10.082 0 0 0 38.9 43z" id="icon-ui-svg--base" />
+              </svg>
+             </div>
+             <p class="esri-text__category" id="e5ab9e38299f4a8dbbdeea93b89c488204170eb7210c2865da01cc8bf3e3b451">Patches and updates</p>
+             <h1 class="esri-text__title" aria-describedby="e5ab9e38299f4a8dbbdeea93b89c488204170eb7210c2865da01cc8bf3e3b451">ArcGIS Server Security 2026 Update 2 Patch</h1>
+            </div>
+           </div>
+           <div class="date">
+            <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/date/clientlibs.css" type="text/css">
+            <script src="/etc.clientlibs/esri-sites/components/content/date/clientlibs.js"></script> <calcite-chip scale="m" data-attr-datetype="published" appearance="solid" color="grey" kind="neutral" data-label="Published:" date="05/27/2026" data-picker="September 12, 2025" data-modified="05/27/2026" data-published="05/27/2026" data-created="May 27, 2026" calcite-hydrated=""> 
+            </calcite-chip>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-0
+  padding-trailer-1
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-ddda124e09" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-6 tablet-column-12 phone-column-12" data-aem-columnsys="column-6">
+          <div id="container-00de8e8133" class="cmp-container">
+           <nav data-cmp-is="toc" class="esri-toc">
+            <div class="cmp-toc__content" id="tableofcontents-e37bb7b3df">
+             <ul>
+              <li><a href="#summary">Summary</a></li>
+              <li><a href="#issues-addressed-with-this-patch">Issues addressed with this patch</a></li>
+              <li><a href="#installing-this-patch-on-windows">Installing this patch on Windows</a></li>
+              <li><a href="#installing-this-patch-on-linux">Installing this patch on Linux</a></li>
+              <li><a href="#uninstalling-this-patch-on-windows">Uninstalling this patch on Windows</a></li>
+              <li><a href="#uninstalling-this-patch-on-linux">Uninstalling this patch on Linux</a></li>
+              <li><a href="#how-to-identify-which-arcgis-products-are-installed">How to identify which ArcGIS products are installed</a></li>
+             </ul>
+            </div>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="columnsystem">
+         <div class="column-18" data-aem-columnsys="column-18">
+          <div id="container-98c9e9a8a0" class="cmp-container">
+           <div class="esri-title">
+            <div id="title-bca4ad3ae3" class="cmp-title">
+             <h3 class="cmp-title__text" id="summary">Summary</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-d53d3dce89" class="cmp-text">
+             <p>Esri announces the ArcGIS Server Security 2026 Update 2 Patch. Esri recommends that all customers using ArcGIS Server 12.0, 11.5, 11.4, 11.3 and 11.1 apply this patch. This patch deals specifically with the issues listed below under&nbsp;<a href="#issues-addressed-with-this-patch">Issues addressed with this patch</a>.</p>
+             <p>As part of the patch installation, the ArcGIS Server service is stopped and restarted. The restart may take several minutes depending on the number of services published on the ArcGIS Server site.</p>
+             <p>This patch can be uninstalled as outlined in the&nbsp;<a href="#uninstalling-this-patch-on-windows">Uninstalling this patch on Windows</a>&nbsp;and&nbsp;<a href="#uninstalling-this-patch-on-linux">Uninstalling this patch on Linux</a>&nbsp;sections below.</p>
+             <p>Esri recommends developing a rollback plan before installing patches. For those utilizing a highly available environment, refer to the help topic on how to apply patches in a highly available environment for guidance.</p>
+             <p>Note about version 11.4: As described in the <a href="https://support.esri.com/en-us/products/arcgis-enterprise/life-cycle" title="https://support.esri.com/en-us/products/arcgis-enterprise/life-cycle">ArcGIS Enterprise Life Cycle</a>, ArcGIS Enterprise 11.4 entered Mature Support on May 1, 2026 and is no longer eligible for software patches. This ArcGIS Server Security 2026 Update 2 Patch is the last patch for version 11.4.</p>
+             <p>For more information on the security vulnerabilities addressed, please see the&nbsp;<a href="https://trust.arcgis.com/">ArcGIS Trust Center</a>&nbsp;announcements.</p>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="bugs" class="cmp-title">
+             <h3 class="cmp-title__text" id="issues-addressed-with-this-patch">Issues addressed with this patch</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-5006cdae67" class="cmp-text">
+             <ul>
+              <li>BUG-000184622 - exceedsLimit statistics query errors when returnCentroid is true for polygon layers. (11.5 only)</li>
+              <li>BUG-000184499 - ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000181376 - ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000184110 - When a custom font is specified in a map service's symbology, the resulting dedicated service cannot be stopped successfully in ArcGIS Server Manager when deployed on Linux, leaving an ArcSOC process orphaned on the machine. (11.3 only)</li>
+             </ul>
+             <p>To avoid conflicts the 12.0 version also addresses:</p>
+             <ul>
+              <li>BUG-000183869 - Backups of ArcGIS Server that exceed 5GB fail to upload to the cloud storage.</li>
+              <li>BUG-000182853 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000182852 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000181250 - Cannot disable or enable ArcGIS REST Services Directory in ArcGIS Server Administrator Directory.</li>
+              <li>BUG-000180128 - After disaster recovery with the WebGISDR restore in a new passive standby environment, the ArcGIS Data Store object store host name is still pointing to the old object store host name in both ArcGIS Data Store (describedatastore) and ArcGIS Server data stores.</li>
+             </ul>
+             <p>To avoid conflicts the 11.5 version also addresses:</p>
+             <ul>
+              <li>BUG-000183582 - ArcGIS REST API Query operation using the outStatistics parameter set to "exceedslimit" fails on Hosted Feature Layers in ArcGIS Enterprise 11.x with error: "Cannot invoke \"com.esri.standardsql.query.Selection.getExpression()\" because \".y\" is null".</li>
+              <li>BUG-000182906 - Queries for hosted feature services stored in the Spatiotemporal Big Data Store do not respect polygon geometry with multiple rings, returning the "Database error has occurred" error message.</li>
+              <li>BUG-000182853 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000182852 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000181143 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180332 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180328 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180326 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180128 - After disaster recovery with the WebGISDR restore in a new passive standby environment, the ArcGIS Data Store object store host name is still pointing to the old object store host name in both ArcGIS Data Store (describedatastore) and ArcGIS Server data stores.</li>
+              <li>BUG-000179710 - Hosting server unable to query and return any data from the relational data store and the ArcGIS Server log returns the error message "Hosted//FeatureServer: Ignite failed to process request".</li>
+              <li>BUG-000179056 - Log in with OAuth Login on a SAML-only portal does not work in ArcGIS Server Administrator Directory.</li>
+              <li>BUG-000178927 - Publishing a scene layer from a scene layer package (.slpk) file fails if the ArcGIS Server cache directory is not named 'arcgiscache'.</li>
+              <li>BUG-000178605 - The queryBins operation with type "dateBin" on esriFieldTypeDateOnly should not use the outTimeReference parameter.</li>
+              <li>BUG-000178604 - The queryBins and stackBy queries do not return null stackBy values.</li>
+              <li>BUG-000178603 - The queryBins count queries with stackBy return a null stackedAttribute for each empty bin.</li>
+              <li>BUG-000178602 - The queryBins stackBy parameter response does not return stackedAttributes with the specified field name in the query.</li>
+              <li>BUG-000178061 - The error message "column "upperboundary" does not exist" is returned when setting the upperBoundaryAlias parameter with the queryBins operation.</li>
+              <li>BUG-000176233 - Receive a comma in the Shape_Area output field that does not properly align with the numeric value when running the identify query in a Linux environment.</li>
+              <li>BUG-000175256 - The publishing process will fail at the addToDefinition request if the process is too fast in highly available ArcGIS Enterprise environments.</li>
+              <li>BUG-000173829 - Opening a scene layer in the ArcGIS REST Services Directory after upgrading to ArcGIS Enterprise 11.4 or 11.5 returns the error "Cannot invoke "com.esri.client.app.mapserver.TileDescriptor.getInputStream()" because "descriptor" is null".</li>
+             </ul>
+             <p>To avoid conflicts the 11.4 version also addresses:</p>
+             <ul>
+              <li>BUG-000184550 - After installing ArcGIS Server 11.4 Security 2026 Update 1 Patch, unable to publish hosted feature services in ArcGIS Enterprise portal.</li>
+              <li>BUG-000182852 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000182112 - After installing the ArcGIS Server Security 2025 Update 2 Patch, certain non-English characters included in services may not display correctly.</li>
+              <li>BUG-000181179 - Restoring the knowledge graph services using the WebGISDR tool fails.</li>
+              <li>BUG-000180332 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180331 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180329 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180328 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180326 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000178927 - Publishing a scene layer from a scene layer package (.slpk) file fails if the ArcGIS Server cache directory is not named 'arcgiscache'.</li>
+              <li>BUG-000175692 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000173174 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000173070 - Additional queries are displayed in the ArcGIS Server logs when viewing a referenced scene layer, which at times causes performance issues.</li>
+              <li>BUG-000173043 - Requests to services running in the shared instance pool result in the 500 wait timeout error after rebooting Windows Server.</li>
+              <li>BUG-000172966 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172062 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+             </ul>
+             <p>To avoid conflicts the 11.3 version also addresses:</p>
+             <ul>
+              <li>BUG-000182852 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000182380 - After installing the ArcGIS Server 11.3 Security 2025 Update 2 Patch, it is no longer possible to upload .sd files through the ArcGIS REST API endpoint.</li>
+              <li>BUG-000182112 - After installing the ArcGIS Server Security 2025 Update 2 Patch, certain non-English characters included in services may not display correctly.</li>
+              <li>BUG-000181179 - Restoring Knowledge Graph services using the WebGISDR tool fails.</li>
+              <li>BUG-000180332 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180331 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180329 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180328 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180326 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000179512 - When a token is being authorized, a password with a specific character count set up as a stand-alone ArcGIS Server with Lightweight Directory Access Protocol (LDAP) identity store returns a blank error.</li>
+              <li>BUG-000179280 - ArcGIS Server javaw.exe does not free memory.</li>
+              <li>BUG-000177069 - A service's maximum number of instances cannot be reached when there are many instances, and the CPU load is high.</li>
+              <li>BUG-000177067 - Some instances do not start as expected when there are many instances.</li>
+              <li>BUG-000176841 - The Sync tools crash when creating an offline map area for a federated ArcGIS Server site if the user lacks administrator privileges.</li>
+              <li>BUG-000176727 - Some service instances don't start after restoring ArcGIS Server from a backup on AWS when a cloud architecture has been used.</li>
+              <li>BUG-000175692 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000175256 - The publishing process will fail at the addToDefinition request if the process is too fast in highly available ArcGIS Enterprise environments.</li>
+              <li>BUG-000173865 - In ArcGIS Enterprise 11.3, the big data store (HDFS) validation in ArcGIS Server Manager fails with the error "[object Object]".</li>
+              <li>BUG-000173174 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000173145 - Contingent values intermittently disappear after adding new forms or creating offline areas with replicas in ArcGIS Field Maps.</li>
+              <li>BUG-000173070 - Additional queries are displayed in the ArcGIS Server logs when viewing a referenced scene layer, which at times causes performance issues.</li>
+              <li>BUG-000172966 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172919 - Query Legends fails and returns the error, "Invalid 'size'" if no value is populated in the size parameter.</li>
+              <li>BUG-000172062 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171445 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171444 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171443 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171441 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171439 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171436 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171435 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171366 - The applyEdits operations do not execute pending the completion of concurrent append operations.</li>
+              <li>BUG-000171365 - Inconsistent maxFieldNameLength service property value after adding the first layer to the service.</li>
+              <li>BUG-000171364 - Update definition call fails with a database error when adding a DateOnly or TimeOnly field to a layer template.</li>
+              <li>BUG-000170994 - The thumbnails of attachments are broken when published from ArcGIS Field Maps on Android devices due to image resizing issues.</li>
+              <li>BUG-000170201 - Unable to access the item details page but can unexpectedly access the REST endpoint of secured services not shared with the user account when assigned a custom role with at least one administrative privilege.</li>
+              <li>BUG-000169392 - Adding new features with text field value left bracket (&lt;) followed by an alphabet to the feature service fails when the 'rollbackOnFailure' option is false, ultimately leading to corruption of the system-maintained i-table.</li>
+              <li>BUG-000168963 - Database connection strings inside of ArcGIS Server's dsconnections.lst files may become damaged when validating data store connections in ArcGIS Server.</li>
+              <li>BUG-000167757 - Downloading PDF attachments larger than 5 MB fails when ArcGIS Server is installed on Linux.</li>
+              <li>BUG-000165095 - The generateToken request references a relative path sequence in the serverUrl parameter</li>
+              <li>BUG-000159629 - Recurring ArcGIS Server logs indicate a '.kmz.zip' file cannot be removed from the 'arcgisuploads' directory.</li>
+              <li>BUG-000151001 - Intermittently, when opening a web application containing several services in ArcGIS Enterprise, one of the included feature services prompts for authentication, despite being shared publicly.</li>
+             </ul>
+             <p>To avoid conflicts the 11.1 version also addresses:</p>
+             <ul>
+              <li>BUG-000182852 - ArcGIS Server has a Security Vulnerability.</li>
+              <li>BUG-000182112 - After installing the ArcGIS Server Security 2025 Update 2 Patch, certain non-English characters included in services may not display correctly.</li>
+              <li>BUG-000180332 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180331 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180329 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180328 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000180326 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000175692 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000175256 - The publishing process will fail at the addToDefinition request if the process is too fast in highly available ArcGIS Enterprise environments)</li>
+              <li>BUG-000174931 - Feature service with Server Object Interceptor enabled on it does not release locks on a registered SQL Server geodatabase registered with ArcGIS Pro even after the feature service is stopped.</li>
+              <li>BUG-000173174 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172966 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172305 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172304 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172303 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172302 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172301 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172300 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172299 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172298 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172297 - SArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172296 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172295 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172294 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172293 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172291 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172290 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172289 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172287 -ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000172062 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171805 - In a stand-alone ArcGIS Server deployment, custom data feeds for feature services cannot be secured.</li>
+              <li>BUG-000171445 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171444 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171443 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171441 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171439 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171436 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171435 -&nbsp;ArcGIS Server has a security vulnerability.</li>
+              <li>BUG-000171366 - The applyEdits operations do not execute pending the completion of concurrent append operations.</li>
+              <li>BUG-000169392 - Adding new features with text field value left bracket (&lt;) followed by an alphabet to the feature service fails when the 'rollbackOnFailure' option is false, ultimately leading to corruption of the system-maintained i-table.</li>
+              <li>BUG-000168963 - Database connection strings inside of ArcGIS Server's dsconnections.lst files may become damaged when validating data store connections in ArcGIS Server.</li>
+              <li>BUG-000165095 - The generateToken request references a relative path sequence in the serverUrl parameter</li>
+              <li>BUG-000163353 - Hosted feature service stores incorrectly self-intersecting polylines as multi-part polylines.</li>
+              <li>BUG-000162858 - Restore of Workflow Manager Server hosted services using the WebGISDR tool fails to retain _views_ services due to issue in service creation.</li>
+              <li>BUG-000161319 - Vector tile layers sometimes display incomplete or blank tiles at certain scale levels.</li>
+              <li>BUG-000161218 - Long running geoprocessing jobs may fail due to premature token expiration.</li>
+              <li>BUG-000160408 - Incorrect encoding of special characters in the ArcGIS Data Store 11.1 spatiotemporal data stores.</li>
+              <li>BUG-000160218 - Incorrect mapping of the ArcGIS data type 'Date' for hosted knowledge graphs.</li>
+              <li>BUG-000160039 - An error "Insufficient number of object IDs allocated" occurs while editing a hosted feature service.</li>
+              <li>BUG-000158883 - Metadata for sublayers of a hosted or non-hosted feature layer in Portal for ArcGIS returns an error, "Error transforming metadata for the layer Code: 400".</li>
+              <li>BUG-000158047 - When making multiple requests to a map service with the returnAdvancedSymbols property being true, non-ASCII-characters are incorrectly encoded in responses after the initial request.</li>
+              <li>BUG-000158045 - The feature service layer resources with 'returnAdvancedSymbols=true' and 'returnDomainNames=true' have inconsistent responses.</li>
+              <li>BUG-000158036 - Non-English characters are not displayed properly in custom data feed feature service responses.</li>
+              <li>BUG-000154221 - After installing the ArcGIS Server Security 2022 Update 1 or 2 Patch, the KML region URL of a map service is invalid.</li>
+              <li>BUG-000147597 - ArcGIS Enterprise hosted services may fail after a machine restart.</li>
+              <li>BUG-000121487 - Tokens in the X-Esri-Authorization request header are ignored for federated servers.</li>
+             </ul>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-62d71c4063" class="cmp-title">
+             <h3 class="cmp-title__text" id="installing-this-patch-on-windows">Installing this patch on Windows</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-43dbade1ee" class="cmp-text">
+             <p>On Windows, the release date order of the patches does not matter when installing multiple patches. If an older patch is installed after a newer patch, the newer patch takes precedence and the fixes from the newer patch will remain. The ArcGIS Enterprise Patch Notification tool, when the option to install all available patches is activated, installs multiple patches in order of release date starting with oldest to newest.</p>
+             <p>The ArcGIS product listed in the table must be installed on your system before you can install a patch. Each patch setup is specific to the ArcGIS product in the list. To determine which products are installed on your system, please see the&nbsp;<a href="#how-to-identify-which-arcgis-products-are-installed">How to identify which ArcGIS products are installed</a>&nbsp;section. Esri recommends that you install the patch for each product that is on your system.<br> &nbsp;</p>
+             <p><b>Step 1:</b>&nbsp;Download the appropriate file to a location other than your ArcGIS installation location.</p>
+             <table>
+              <tbody>
+               <tr>
+                <td width="514"><b>ArcGIS Enterprise </b></td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 12.0</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-120-P-1454/ArcGIS-120-S-SEC2026U2-Patch.msp">ArcGIS-120-S-SEC2026U2-Patch.msp</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>7A3E6073D1D8B01B40323631BF1772C5DE51B970D047DB71FDB6AABFF25937AD</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.5</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-115-P-1455/ArcGIS-115-S-SEC2026U2-Patch.msp">ArcGIS-115-S-SEC2026U2-Patch.msp</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>FA8EF1E1551397F565BEF432B8B5E98CD315F4617265BA928CBD8F5E7B3E818C</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.4</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-114-P-1456/ArcGIS-114-S-SEC2026U2-Patch.msp">ArcGIS-114-S-SEC2026U2-Patch.msp</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>C9144ADCD4C5B6B0E9494D701CFDAEF046F14DC7F3A10290BEFCA31C8D5B4202</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.3</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-113-P-1457/ArcGIS-113-S-SEC2026U2-Patch.msp">ArcGIS-113-S-SEC2026U2-Patch.msp</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>BC0FD80C966DE860EC7CFB62A9D74BB0C1B0F1CB7B27E986A44B34395106CD22</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.1</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-111-P-1458/ArcGIS-111-S-SEC2026U2-Patch.msp">ArcGIS-111-S-SEC2026U2-Patch.msp</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>CC99139A6DC1C219034CDA58BBAA49A53F391273DBCF13AC4F9F9F6523AC0071</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+              </tbody>
+             </table>
+             <p><b>Step 2:</b>&nbsp;Make sure you have write access to your ArcGIS installation location.</p>
+             <p><b>Step 3:</b>&nbsp;Double-click ArcGIS-&lt;Version&gt;-S-SEC2026U2-Patch.msp to start the setup process.</p>
+             <p><b>NOTE</b>: If double clicking on the MSP file does not start the setup installation, you can start the setup installation manually by using the following command:<br></p>
+             <div style="	text-indent: 20.0pt;
+">
+              <code>msiexec.exe /p [location of Patch]\ArcGIS-&lt;Version&gt;-S-SEC2026U2-Patch.msp</code>
+              <div>
+               &nbsp;
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-1db1b2ed95" class="cmp-title">
+             <h3 class="cmp-title__text" id="installing-this-patch-on-linux">Installing this patch on Linux</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-9676887209" class="cmp-text">
+             <p>On Linux, the release date order of the patches matters when installing multiple patches. If an older patch is installed after a newer patch, the older patch will replace the newer patch and the fixes in the newer patch will be removed. The ArcGIS Enterprise Patch Notification tool, when the option to install all available patches is activated, installs multiple patches in order of release date starting with oldest to newest.</p>
+             <p>Complete the following install steps as the ArcGIS Install owner. The Install owner is the owner of the arcgis folder. This patch should be installed on all ArcGIS Server installations related to the ArcGIS Server site.</p>
+             <p>The ArcGIS product listed in the table must be installed on your system before you can install a patch. Each patch setup is specific to the ArcGIS product in the list. To determine which products are installed on your system, please see the&nbsp;<a href="#how-to-identify-which-arcgis-products-are-installed">How to identify which ArcGIS products are installed</a>&nbsp;section. Esri recommends that you install the patch for each product that is on your system.</p>
+             <p><br> <b>Step 1:</b>&nbsp;Download the appropriate file to a location other than your ArcGIS installation location.<br> <br></p>
+             <table>
+              <tbody>
+               <tr>
+                <td width="514"><b>ArcGIS Enterprise&nbsp;</b></td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 12.0</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-120-P-1454/ArcGIS-120-S-SEC2026U2-Patch-linux.tar">ArcGIS-120-S-SEC2026U2-Patch-linux.tar</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>A7B5AE653FB47748A962BBF5A678266734F26A2EA42CC4927278E6B7D0342B3C</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.5</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-115-P-1455/ArcGIS-115-S-SEC2026U2-Patch-linux.tar">ArcGIS-115-S-SEC2026U2-Patch-linux.tar</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>B41549F0EE58B14BC882AB6A25DFE0D457CF4D9766DE725D5109D9A0B654FDF5</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.4</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-114-P-1456/ArcGIS-114-S-SEC2026U2-Patch-linux.tar">ArcGIS-114-S-SEC2026U2-Patch-linux.tar</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>CB36328AEE0516CF829A4924C5CA79E3C7663224347AC0BFBC558588DD0A0D75</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.3</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-113-P-1457/ArcGIS-113-S-SEC2026U2-Patch-linux.tar">ArcGIS-113-S-SEC2026U2-Patch-linux.tar</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>2F4082667640D48147A252A3EAA2F4B84365DE68D4ADD2C349AC317A200D63CC</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+               <tr>
+                <td>&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;ArcGIS Server 11.1</b></td>
+                <td><a href="https://gisupdates.esri.com/QFE/S-111-P-1458/ArcGIS-111-S-SEC2026U2-Patch-linux.tar">ArcGIS-111-S-SEC2026U2-Patch-linux.tar</a></td>
+               </tr>
+               <tr>
+                <td height="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Checksum<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                <td>F956A4776B9B4E1E7ACBC16A15FBE3374D9DD01E006B0FE14A9F20570ABF2BE6</td>
+               </tr>
+               <tr>
+                <td width="514">&nbsp;</td>
+                <td width="652">&nbsp;</td>
+               </tr>
+              </tbody>
+             </table>
+             <p><b>Step 2:</b>&nbsp;Make sure you have write access to your ArcGIS installation location, and that no one is using ArcGIS.</p>
+             <p><b>Step 3:</b>&nbsp;Extract the specified tar file by typing:</p>
+             <div style="	text-indent: 20.0pt;
+">
+              <code>% tar -xvf ArcGIS-&lt;Version&gt;-S-SEC2026U2-Patch-linux.tar</code><br> <br> <b>Step 4</b>:<span style="	letter-spacing: 0.0em;
+">&nbsp;Start the installation by typing:<br> </span><br>
+             </div>
+             <div style="	text-indent: 20.0pt;
+">
+              <code>% ./applypatch<br> </code><br> This will start the dialog for the menu-driven installation procedure. Default selections are noted in parentheses ( ). To quit the installation procedure, type 'q' at any time.<br> <br>
+             </div>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-4cff938a71" class="cmp-title">
+             <h3 class="cmp-title__text" id="uninstalling-this-patch-on-windows">Uninstalling this patch on Windows</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-a25dc8b910" class="cmp-text">
+             <p>To uninstall this patch on Windows, open the Windows Control Panel and navigate to installed programs. Make sure that "View installed updates" (upper left side of the Programs and Features dialog) is active. Select the patch name from the programs list and click Uninstall to remove the patch.<br></p>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-74a20cd8f8" class="cmp-title">
+             <h3 class="cmp-title__text" id="uninstalling-this-patch-on-linux">Uninstalling this patch on Linux</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-852e443efa" class="cmp-text">
+             <p>Navigate to the &lt;Product Installation Directory&gt;/.Setup/qfe directory and run the following script as the ArcGIS Install owner:</p>
+             <div style="	text-indent: 20.0pt;
+">
+              <code>./removepatch.sh</code>
+              <p><span style="	letter-spacing: 0.0em;
+"><br> The removepatch.sh script allows you to uninstall previously installed patches or hot fixes. Use the -s status flag to get the list of installed patches or hot fixes ordered by date. Use the -q flag to remove patches or hot fixes in reverse chronological order by date they were installed. Type removepatch -h for usage help.</span><br></p>
+             </div>
+             <p>Restart your ArcGIS services.</p>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="idsp" class="cmp-title">
+             <h3 class="cmp-title__text" id="how-to-identify-which-arcgis-products-are-installed">How to identify which ArcGIS products are installed</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-bfc688d338" class="cmp-text">
+             <p>To determine which ArcGIS products are installed, choose the appropriate version of the PatchFinder utility for your environment and run it from your local machine. PatchFinder will list all products, hot fixes, and patches installed on your local machine.</p>
+             <p><a href="https://downloads.esri.com/Support/downloads/other_/PatchFinder.exe" target="_blank" rel="noopener noreferrer">PatchFinder for Windows</a></p>
+             <p><a href="https://downloads.esri.com/Support/downloads/other_/PatchFinder.tar" target="_blank" rel="noopener noreferrer">PatchFinder for Linux/Unix</a></p>
+            </div>
+           </div>
+           <div class="separator">
+            <hr class="separator full-width left-align">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+      <div class="grid-container ">
+       <div id="container-00c893ae0c" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-12 pre-6" data-aem-columnsys="column-12">
+          <div id="container-4fe956cc42" class="cmp-container">
+           <div class="experiencefragment">
+            <div class="xf-content-height">
+             <div class="root responsivegrid">
+              <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+               <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+                <style>
+#feedback{
+    text-align: center;
+}
+
+#feedback .withborder{
+border-bottom: 1px solid #cacaca;
+}
+#feedback .esri-title,  .raw-html-for-js-app{
+display:inline-block;
+}
+#feedback .technical-feedback-top .cmp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+flex-wrap: wrap;
+}
+
+
+.feedback-link{
+margin-bottom: 0;
+    padding-top: 13px;
+}
+
+.more-help-section svg{
+height:auto;
+width:48px;
+}
+</style>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-0
+  trailer-2
+  padding-leader-0
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-5ab952dcc2" class="cmp-container">
+                   <div class="columnsystem">
+                    <div class="column-12" data-aem-columnsys="column-12">
+                     <div id="container-9e75d00348" class="cmp-container">
+                      <div class="raw-html-for-js-app">
+                       <style>
+
+.esri-technical-info-contact {
+    margin: var(--space-4) 0 var(--space-16);
+    padding-block-end: var(--space-10);
+    background:  #edf8ff;
+}
+
+.esri-technical-info-contact .feedback-section {
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid var(--calcite-ui-border-1);
+    padding-bottom: var(--space-6);
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section {
+        flex-direction: row;
+    }
+}
+.esri-technical-info-contact .feedback-section span {
+    margin-right: var(--space-4);
+}
+.esri-technical-info-contact .feedback-section .feedback-section-click {
+    text-align: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-click {
+        border-right: 1px solid var(--calcite-ui-border-1);
+        padding-inline-end: var(--space-8);
+    }
+}
+.esri-technical-info-contact .feedback-section .feedback-section-email {
+    text-align: center;
+    padding-top: var(--space-3);
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-email {
+        padding-inline-start: var(--space-8);
+        padding-top: 0;
+    }
+}
+.esri-technical-info-contact .more-help-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 760px) {
+    .esri-technical-info-contact .more-help-section {
+        flex-direction: row;
+    }
+}
+
+.esri-technical-info-contact .more-help-section div {
+    flex-basis: 50%;
+    text-align: center;
+    padding-block-start:var(--space-10);
+}
+
+.esri-technical-info-contact .more-help-section img,
+.esri-technical-info-contact .more-help-section svg {
+    width: 48px;
+    fill: var(--theme-color-secondary);
+}
+
+  </style>
+                       <div class="esri-technical-info column-24">
+                        <div class="esri-technical-info-details column-18">
+                         <div class="esri-technical-info-contact">
+                          <div class="more-help-section">
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svgz" viewbox="0 0 48 48">
+                             <path d="M20 12.086C9.027 12.086.1 18.176.1 25.662c0 4 2.483 7.504 7.185 10.151l-2.275 6.34 10.31-3.596c.538.066 3.179.38 4.68.38 11.159 0 19.9-5.83 19.9-13.275 0-7.486-8.927-13.576-19.9-13.576zm0 26.052c-1.592 0-4.644-.383-4.674-.387l-.093-.011-8.904 3.106 1.94-5.406-.302-.164C4.743 33.522.9 30.43.9 25.662c0-7.044 8.568-12.776 19.1-12.776s19.1 5.732 19.1 12.776c0 6.996-8.39 12.476-19.1 12.476zm23.335-23.055l.47.646-2.424 1.767-.47-.646zm-7.517-2.822l-.681-.419 1.57-2.556.681.42zM47 24.101v.799h-3v-.8zm-27.5.374a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0zM9.5 24.475a1.025 1.025 0 1 0 1.025 1.025A1.026 1.026 0 0 0 9.5 24.475zM9.275 25.5a.225.225 0 1 1 .45 0c0 .248-.45.248-.45 0zM29.5 24.475a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Get help from ArcGIS experts</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/contact.html">
+                             Contact technical support
+                            </calcite-link>
+                           </div>
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
+                             <path d="M23.138 37l-.55 1.1h3.823l-.55-1.1h.895l.95 1.9h-6.412l.95-1.9zm19.96-1.9H6v.8h37.099zm-8.09-14.2H37v-.8h-1.993zM46.9 37.474V39.5a4.405 4.405 0 0 1-4.4 4.4h-36a4.405 4.405 0 0 1-4.4-4.4v-2.026h.021a3.374 3.374 0 0 1 .283-1.38l7.27-16A3.405 3.405 0 0 1 12.77 18.1h1.237v.8H12.77a2.602 2.602 0 0 0-2.367 1.524l-7.27 16A2.6 2.6 0 0 0 5.499 40.1h38.002a2.6 2.6 0 0 0 2.366-3.676l-7.27-16A2.602 2.602 0 0 0 36.23 18.9h-1.223v-.8h1.223a3.405 3.405 0 0 1 3.095 1.993l7.27 16a3.372 3.372 0 0 1 .284 1.38zm-.818 2.197a3.362 3.362 0 0 1-2.581 1.229H5.499a3.364 3.364 0 0 1-2.581-1.229 3.595 3.595 0 0 0 3.582 3.43h36a3.595 3.595 0 0 0 3.582-3.43zM12 20.9h2.007v-.8H12zM24.507.1c-5.495 0-8.4 2.183-8.4 6.313v16.329l8.4 8.455 8.4-8.455V6.412c0-4.13-2.905-6.312-8.4-6.312zm7.6 22.312l-7.6 7.65-7.6-7.65v-16c0-3.657 2.557-5.512 7.6-5.512s7.6 1.855 7.6 5.513zM24.506 5.1a4.4 4.4 0 1 0 4.4 4.4 4.405 4.405 0 0 0-4.4-4.4zm0 8a3.6 3.6 0 1 1 3.6-3.6 3.604 3.604 0 0 1-3.6 3.6z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Download the Esri Support App</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/app.html">
+                             Go to download options
+                            </calcite-link>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-4a97898f22" class="cmp-container">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+     <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/css/support-ai-chatbot.css">
+     <div id="support-ai-chatbot"></div>
+     <script defer src="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/js/support-ai-chatbot.js"></script>
+    </div>
+   </div>
+  </main>
+  <script defer src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+  <script defer src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/container.js"></script>
+  <script defer src="/etc.clientlibs/esri-sites/clientlibs/components.js"></script>
+  <div hidden>
+   <span id="new-window">opens in new window</span>
+  </div> <calcite-modal id="page-modal" scale="m" width="m" aria-modal="true" role="dialog">
+   <div slot="header"></div>
+   <div slot="content"></div> 
+  </calcite-modal>
+  <div id="live-region" class="assistText" aria-live="polite"></div>
+  <script src="https://webapps-cdn.esri.com/CDN/packages/instant.page/instantpage.min.js"></script>
+  <script src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"></script>
+  <script type="text/javascript">_satellite.pageBottom();</script>
+  <script src="/etc.clientlibs/esri-sites/clientlibs/clientlib-dependencies.js"></script>
+ </body>
+</html>

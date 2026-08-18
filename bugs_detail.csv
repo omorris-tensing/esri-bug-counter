@@ -1,0 +1,248 @@
+patch_id,product,year,bug_id,description,is_security
+PORTAL-FOR-ARCGIS-SECURITY-2019-UPDATE-2,Portal for ArcGIS,2021,BUG-000125434,A geoprocessing service with the GPDataFile input type does not provide the option to upload a file in the Web AppBuilder for ArcGIS geoprocessing widget in Portal for ArcGIS 10.7.1.,False
+PORTAL-FOR-ARCGIS-SECURITY-2019-UPDATE-2,Portal for ArcGIS,2021,BUG-000125033,Users signed in through Integrated Windows Authentication (IWA) cannot search for layers under My Organization in Map Viewer.,False
+PORTAL-FOR-ARCGIS-SECURITY-2019-UPDATE-2,Portal for ArcGIS,2021,BUG-000124953,Portal for ArcGIS application information exposure,False
+PORTAL-FOR-ARCGIS-SECURITY-2019-UPDATE-2,Portal for ArcGIS,2021,BUG-000123690,Reflected cross-site scripting (XSS) in the Portal for ArcGIS home application CVSS 3.0 Base Score: 5.4 - CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N,True
+PORTAL-FOR-ARCGIS-SECURITY-2019-UPDATE-2,Portal for ArcGIS,2021,BUG-000119891,Portal for ArcGIS profiles allow HTML injection (Only in 10.6.1and 10.5.1) CVSS 3.0 Base Score: 3.5 - CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N,True
+ARCGIS-DESKTOP-ENGINE-SERVER-GENERAL-RAS,ArcGIS Server,2021,BUG-000137702,Addresses a crash in ArcGIS when parsing specially crafted files.,False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2021,BUG-000134965,There is a SQL injection vulnerability in ArcGIS Server,True
+PORTAL-FOR-ARCGIS-OPERATIONS-DASHBOARD-S,Portal for ArcGIS,2021,BUG-000123698,Stored cross-site scripting (XSS) issue in Operations Dashboard. CVSS 3.0 Base Score: 8.0 - CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H,True
+ARCGIS-GEOEVENT-SERVER-SECURITY-UPDATE-2,ArcGIS GeoEvent Server,2021,BUG-000139249,ArcGIS GeoEvent Server has a Directory Traversal security vulnerability.,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-1-PAT,ArcGIS Server,2021,BUG-000137658,SSRF vulnerability in ArcGIS Server Manager,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-1-PAT,ArcGIS Server,2021,BUG-000137662,Reflected XSS in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-1-PAT,ArcGIS Server,2021,BUG-000137663,Stored XSS vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-1-PAT,ArcGIS Server,2021,BUG-000137668,Stored XSS vulnerability in ArcGIS Server Services Directory,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-1-PAT,ArcGIS Server,2021,BUG-000131992,Reflected cross-site scripting (XSS) vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-1-PAT,ArcGIS Server,2021,BUG-000137659,Cross-site scripting (XSS) in ArcGIS Server Manager (10.6.1 only),True
+ARCGIS-RUNTIME-LOCAL-SERVER-SDK-GENERAL-,ArcGIS Server,2021,BUG-000137702,Addresses a crash in ArcGIS when parsing specially crafted files.,False
+PORTAL-FOR-ARCGIS-SECURITY-2021-UPDATE-1,Portal for ArcGIS,2021,BUG-000140596,The full bar chart legend is not displayed in the Map Viewer for 10.8.1 map services. (10.8.1),False
+PORTAL-FOR-ARCGIS-SECURITY-2021-UPDATE-1,Portal for ArcGIS,2021,BUG-000139216,Privilege escalation vulnerability in Portal for ArcGIS,True
+PORTAL-FOR-ARCGIS-SECURITY-2021-UPDATE-1,Portal for ArcGIS,2021,BUG-000138525,Reflected XSS vulnerability in Portal for ArcGIS,True
+PORTAL-FOR-ARCGIS-SECURITY-2021-UPDATE-1,Portal for ArcGIS,2021,BUG-000136493,"Stored Cross-Site Scripting issue in Portal for ArcGIS (10.8.1, 10.8, 10.7.1, 10.6.1, 10.6)",True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-2-PAT,ArcGIS Server,2021,BUG-000113339,"The ArcGIS Server versions 10.6 or 10.7.1 export site operation returns the error message, ""Export operation failed. null"" within Amazon Web Services (AWS) on Microsoft Windows and Linux (or Azure). (10.7.1 only)",False
+ARCGIS-SERVER-SECURITY-2021-UPDATE-2-PAT,ArcGIS Server,2021,BUG-000139857,Remote file inclusion vulnerability in the ArcGIS Server help documentation,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-2-PAT,ArcGIS Server,2021,BUG-000142180,Stored XSS vulnerability in ArcGIS Server (10.8.1 and 10.9 only),True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-2-PAT,ArcGIS Server,2021,BUG-000142120,SQL injection vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2021-UPDATE-2-PAT,ArcGIS Server,2021,BUG-000142204,Setting a field invisible in a hosted feature service view requires hiding the field references from the templates.,False
+ARCGIS-SERVER-LOG4J-PATCH,ArcGIS Server,2022,BUG-000145345,Update Log4j to address security vulnerabilities. Please see ArcGIS Enterprise Log4j Security Patches Available for further details.,True
+ARCGIS-DATA-STORE-LOG4J,ArcGIS Data Store,2022,BUG-000145346,Update log4j to address security vulnerabilities. Please see ArcGIS Enterprise Log4j Security Patches Available for further details.,True
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000145347,: Update log4j to address security vulnerabilities.,True
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000129110,: Enterprise server connections without credentials revert to an unusable state when GeoEvent Server is restarted.,False
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000144488,: Following a reboot GeoEvent Gateway will periodically fail to restart in an operational state.,False
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000145348,: Update GeoEvent Server to replace unpatched Log4j libraries.,True
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000145938,: Expressions with attribute names including special metacharacters are no longer supported in the 10.9 / 10.9.1 Field Mapper.,False
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000145944,: Event records with one or more null values are no longer supported by the 10.9 / 10.9.1 stream service output.,False
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000146495,: Lack of query parameter throws null pointer exception.,False
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000146611,: Field Enricher query fails for integer type values in where clause.,False
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000146645,: GeoEvent Server loses connection with the GeoEvent Gateway causing GeoEvent Services and Outputs to stop functioning correctly.,False
+ARCGIS-GEOEVENT-SERVER-10-9-1-PATCH-1-WI,ArcGIS GeoEvent Server,2022,BUG-000147023,: GeoEvent restart stability with custom components.,False
+ARCGIS-GEOEVENT-SERVER-10-8-1-PATCH-4-WI,ArcGIS GeoEvent Server,2022,BUG-000144488,Following a reboot GeoEvent Gateway will periodically fail to restart in an operational state.,False
+ARCGIS-GEOEVENT-SERVER-10-8-1-PATCH-4-WI,ArcGIS GeoEvent Server,2022,BUG-000145348,Update GeoEvent Server to replace unpatched Log4j libraries.,True
+ARCGIS-GEOEVENT-SERVER-10-8-1-PATCH-4-WI,ArcGIS GeoEvent Server,2022,BUG-000146645,GeoEvent Server loses connection with the GeoEvent Gateway causing GeoEvent Services and Outputs to stop functioning correctly.,False
+ARCGIS-GEOEVENT-SERVER-10-8-1-PATCH-4-WI,ArcGIS GeoEvent Server,2022,BUG-000147023,GeoEvent restart stability with custom components.,False
+ARCGIS-GEOEVENT-SERVER-10-6-1-PATCH-3,ArcGIS GeoEvent Server,2022,BUG-000145348,: Update GeoEvent Server to replace unpatched Log4j libraries.,True
+ARCGIS-DATA-STORE-LOG4J-PATCH,ArcGIS Data Store,2022,BUG-000145346,Update log4j to address security vulnerabilities. Please see ArcGIS Enterprise Log4j Security Patches Available for further details.,True
+ARCGIS-DATA-INTEROPERABILITY-FOR-SERVER-,ArcGIS Data Interoperability for Server,2022,BUG-000145606,Log4J security vulnerability issues Please see ArcGIS Enterprise Log4j Security Patches Available for further details.,True
+ARCGIS-WORKFLOW-MANAGER-SERVER-10-9-1-PA,ArcGIS Workflow Manager Server,2022,BUG-000145363,: Update Log4j to address security vulnerabilities.,True
+PORTAL-FOR-ARCGIS-LOG4J-PATCH,Portal for ArcGIS,2022,BUG-000145347,Update log4j to address security vulnerabilities.,True
+ARCGIS-NOTEBOOK-SERVER-SECURITY-PATCH,ArcGIS Notebook Server,2022,BUG-000147723,Update Log4j in ArcGIS Notebook Server to address security vulnerabilities.,True
+ARCGIS-NOTEBOOK-SERVER-SECURITY-PATCH,ArcGIS Notebook Server,2022,BUG-000147725,Update ArcGIS Notebook server postinstallation utility to support updating notebook runtimes with new imageId.,False
+ARCGIS-GEOENRICHMENT-SERVER-LOG4J-PATCH,ArcGIS GeoEnrichment Server,2022,BUG-000145426,Update log4j to address security vulnerabilities. Please see ArcGIS Enterprise Log4j Security Patches Available for further details.,True
+ARCGIS-SERVER-MAP-SERVICE-SECURITY-2022-,ArcGIS Server,2022,BUG-000142376,Reflected Cross-Site Scripting (XSS) vulnerability in ArcGIS Server.,True
+ARCGIS-SERVER-SECURITY-2022-UPDATE-1-PAT,ArcGIS Server,2022,BUG-000150540,Reflected XSS vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2022-UPDATE-1-PAT,ArcGIS Server,2022,BUG-000150537,ArcGIS Server has a local file inclusion (LFI) vulnerability,True
+ARCGIS-SERVER-SECURITY-2022-UPDATE-1-PAT,ArcGIS Server,2022,BUG-000148347,Unvalidated redirect issue in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2022-UPDATE-1-PAT,ArcGIS Server,2022,BUG-000146513,Reflected XSS vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2022-UPDATE-1-PAT,ArcGIS Server,2022,BUG-000144172,Remote file download issue in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2022-UPDATE-2-PAT,ArcGIS Server,2022,BUG-000152121,Directory traversal vulnerability in ArcGIS Server.,True
+ARCGIS-SERVER-SECURITY-2022-UPDATE-2-PAT,ArcGIS Server,2022,BUG-000144906,Unable to save a generated domain list or delete an existing domain list in Portal for ArcGIS. (10.9.1 only),False
+PORTAL-FOR-ARCGIS-QUICKCAPTURE-SECURITY-,Portal for ArcGIS,2022,BUG-000145824,An unvalidated redirect occurs in ArcGIS QuickCapture web designer. Please refer to the blog post Portal for ArcGIS Quick Capture Security Patch for further details.,True
+ARCGIS-SERVER-DIRECTORY-TRAVERSAL-VULNER,ArcGIS Server,2022,BUG-000152121,Directory traversal vulnerability in ArcGIS Server,True
+ARCGIS-INSIGHTS-SECURITY-PATCH-FOR-ARCGI,ArcGIS Insights (Desktop),2023,BUG-000157278,ArcGIS Insights has a security vulnerability.,True
+ARCGIS-SERVER-SECURITY-2023-UPDATE-1-PAT,ArcGIS Server,2023,BUG-000154070,Stored XSS issue in the ArcGIS REST Services directory,True
+ARCGIS-SERVER-SECURITY-2023-UPDATE-1-PAT,ArcGIS Server,2023,BUG-000158075,Stored XSS issue in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2023-UPDATE-1-PAT,ArcGIS Server,2023,BUG-000155043,"Append operation on an editor tracking enabled layer, updates created user field with editing user when upsert=true and skipInserts=true (10.9.1, 10.8.1 only)",False
+ARCGIS-SERVER-SECURITY-2023-UPDATE-1-PAT,ArcGIS Server,2023,BUG-000154221,"After installing the ArcGIS for Server Security 2022 Update 1 or 2 Patch , the KML region URL of a map service is invalid.",False
+ARCGIS-SERVER-SECURITY-2023-UPDATE-1-PAT,ArcGIS Server,2023,BUG-000153493,Installing ArcGIS Server Security 2022 Update 1 or 2 Patch affects the access to existing Workflow Manager (Classic) feature services.,False
+ARCGIS-SERVER-SECURITY-2023-UPDATE-1-PAT,ArcGIS Server,2023,BUG-000153438,"After installing the ArcGIS Server Security 2022 patch, ArcGIS Server services folders become inaccessible at the REST endpoint if it has a period (.) in the name.",False
+ARCGIS-SERVER-SECURITY-2023-UPDATE-1-PAT,ArcGIS Server,2023,BUG-000133297,"Size of server.xml keeps increasing (10.9.1, 10.8.1 only)",False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000162991,Crash in map service export operation with clipping parameter. (10.9.1 Only),False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000161894,Unable to register a DB2 enterprise geodatabase as a data store or validate an existing DB2 data store in ArcGIS Server after installing the ArcGIS Server Map and Feature Service Security 2023 Update 1 Patch for versions 10.8.1 or 10.9.1.  (10.8.1 and 10.9.1 only),False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000160937,Installing ArcGIS Server Map and Feature Service Security 2023 Update 1 Patch from the Patch Notification options to Install All Patches or Install All Security Patches or with a silent install fails with Error 1603.,False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000158930,North arrows missing after exporting to PDF.,False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000158920,Map service does not include supportsQueryDomains in its root resources.,False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000158918,Print service fails to draws map services off 11.0 or above when the web map is in one of new projections such as equal earth.,False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000158039,There is an information disclosure issue in ArcGIS Server.,True
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000157755,Print services fail when a print request includes both secured and non-secured services from the same server. (10.9.1 and 10.8.1 only),False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000150564,Exporting PDFs from ArcGIS Pro 3.0 and combining them in Adobe Acrobat DC causes them to turn blank.,False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000149770,"When publishing map image layers with labels enabled in ArcGIS Pro 2.8.2 to Portal for ArcGIS (10.8.1 or 10.9.1), labels initially appear but completely disappear upon editing.",False
+ARCGIS-SERVER-MAP-AND-FEATURE-SERVICE-SE,ArcGIS Server,2023,BUG-000124574,Certain Living Atlas Premium content layers do not successfully display in the legend of a map printed from Web AppBuilder for ArcGIS.,False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2024,BUG-000163367,"Portal for ArcGIS 11.1 Enterprise Sites Security Patch installs successfully, but results in further unexpected issues with Portal for ArcGIS. (11.1 only)",False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2024,BUG-000161711,"After installing the Portal for ArcGIS 10.8.1 Enterprise Sites Security Patch, no further Portal for ArcGIS patches can be installed and the Portal for ArcGIS software cannot be upgraded to a later release. (10.8.1 only)",False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2024,BUG-000161332,"Installing Portal for ArcGIS 11.1 Enterprise Sites Security Patch A or B removes the directory and files used by 3D Object style items, resulting in advanced 3D symbols not displaying properly in Scene Viewer. (11.1 only)",False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2024,BUG-000160895,"After installing the Portal for ArcGIS 10.9.1 Enterprise Sites Security Patch, no further Portal for ArcGIS patches can be installed and the Portal for ArcGIS software cannot be upgraded to a later release. (10.9.1 only)",False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2024,BUG-000160830,Installing the 11.1 version of the Portal for ArcGIS Enterprise Sites Security Patch results in failures on the standby machine in highly available environments. (11.1 only),False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2024,BUG-000159526,The Portal for ArcGIS Enterprise Sites Security Patch 11.1 is listed as not installed in the Patch Notification tool after installation. (11.1 only),False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2024,BUG-000153659,A stored Cross Site Scripting (XSS) vulnerability in ArcGIS Enterprise Sites.,True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000168637,Reflected cross-site-scripting (XSS) attacks in Portal for ArcGIS. (11.1 and 11.2 only),True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000168624,"Unvalidated redirect in Portal for ArcGIS. (11.2, 11.1, 10.9.1. and 10.8.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000167984,"Portal for ArcGIS has a Local file inclusion (LFI) vulnerability (11.2, 11.1 and 10.9.1 only)",True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000167983,Unvalidated redirect in Portal for ArcGIS (11.1 and 10.9.1 only),True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000165732,Reflected XSS in Portal for ArcGIS (11.1 and 10.9.1 only),True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000165286,"Reflected XSS in Portal for ArcGIS (11.1, 10.9.1 and 10.8.1 only)",True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000163019,Stored XSS in Portal for ArcGIS (10.9.1 and 10.8.1 only),True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000162883,Unable to log in to some endpoints in Portal for ArcGIS through SAML or OpenID Connect when using an external identity provider (11.1 and 10.9.1 only),False
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000161683,HTML injection vulnerability in Portal for ArcGIS (11.1 and 10.9.1 only),True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000160765,"Stored XSS in ArcGIS Experience Builder (11.1 , 10.9.1 and 10.8.1 only)",True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000160599,"Stored XSS in Portal for ArcGIS Web App Builder (11.1, 10.9.1 and 10.8.1 only)",True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000160241,"Reflected XSS in Portal for ArcGIS (11.1, 10.9.1 and 10.8.1 only)",True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000154827,Reflected XSS in ArcGIS Experience Builder (10.9.1 and 10.8.1 only),True
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000152181,"When the Show option is clicked in a related attribute table in Portal for ArcGIS Map Viewer Classic, the attributes of the related layer are not displayed if the relationship class is created using long integer, short integer, and float data types. (10.9.1 only)",False
+PORTAL-FOR-ARCGIS-SECURITY-2024-UPDATE-2,Portal for ArcGIS,2025,BUG-000154028,"If a group is configured for only owners or managers to contribute content, the managers cannot share items to the group in Portal for ArcGIS 10.8.1 and 10.9.1.",False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172305,"Stored XSS in ArcGIS Server Administrator Directory (11.2, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172304,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172303,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172302,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172301,Stored XSS in ArcGIS Server Administrator Directory,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172300,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172299,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172298,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172297,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172296,Stored XSS in ArcGIS Server Administrator Directory,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172295,Stored XSS in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172294,Stored XSS in ArcGIS Server Administrator Directory,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172293,"Stored XSS issue in ArcGIS Server Manager (11.2, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172291,"Stored XSS in ArcGIS Server Administrator Directory (11.2, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172290,"Directory traversal vulnerability in ArcGIS Server (11.2, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172289,"Stored XSS vulnerability in ArcGIS Rest Services Directory (11.2, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000172287,Stored XSS in ArcGIS Server Administrator Directory,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171805,"In a stand-alone ArcGIS Server deployment, custom data feeds for feature services cannot be secured. (11.3, 11.2, 11.1)",False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171492,The pipe character operator in a regular expression does not return features when filtering hosted feature services using the spatiotemporal big data store. (11.2),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171445,Directory traversal vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171444,SQL injection vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171443,Local file inclusion (LFI) vulnerability in ArcGIS Server,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171441,Stored XSS in ArcGIS Server Manager,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171439,Stored XSS in ArcGIS Server Administrator Directory,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171436,Stored XSS vulnerability in ArcGIS Server Rest services,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171435,"Unauthorized access to secure services in ArcGIS Server (11.3, 11.2, 11.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171366,"The applyEdits operations do not execute pending the completion of concurrent append operations. (11.3, 11.2, 11.1)",False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171365,Inconsistent maxFieldNameLength service property value after adding the first layer to the service. (11.3),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000171364,Update definition call fails with a database error when adding a DateOnly or TimeOnly field to a layer template. (11.3),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000169392,"Adding new features with text field value left bracket (<) followed by an alphabet to the feature service fails when the 'rollbackOnFailure' option is false, ultimately leading to corruption of the system-maintained i-table. (11.3, 11.2, 11.1)",False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000168963,"Database connection strings inside of ArcGIS Server's dsconnections.lst files may become damaged when validating data store connections in ArcGIS Server. (11.3, 10.9.1)",False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000167757,Downloading PDF attachments larger than 5 MB fails when ArcGIS Server is installed on Linux. (11.2),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000165095,The generateToken request references a relative path sequence in the serverUrl parameter,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-1,ArcGIS Server,2025,BUG-000114507,"Portal for ArcGIS creates duplicate items upon overwriting an existing service in a federated server, failing due to inaccessibility of data. (10.9.1)",False
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2025,BUG-000177336,"ArcGIS Enterprise Sites has a stored Cross-site Scripting vulnerability. (11.4, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2025,BUG-000177335,"ArcGIS Enterprise Sites has a stored Cross-site Scripting vulnerability. (11.4, 11.3)",True
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2025,BUG-000177333,"ArcGIS Enterprise Sites has a stored Cross-site Scripting vulnerability. (11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2025,BUG-000173918,"ArcGIS Enterprise Sites has a security vulnerability. (11.4, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2025,BUG-000173171,"ArcGIS Enterprise Sites has a Cross-site Scripting vulnerability. (11.4, 11.3",True
+PORTAL-FOR-ARCGIS-ENTERPRISE-SITES-SECUR,Portal for ArcGIS,2025,BUG-000172758,"In the ArcGIS Enterprise Sites gallery cards, the buttons are not immediately updated when a new button background color is specified in the Theme settings. (11.4, 11.3)",False
+ARCGIS-SERVER-FEATURE-SERVICES-SECURITY-,ArcGIS Server,2025,BUG-000179884,There is a security vulnerability in ArcGIS Server Feature Services.,True
+ARCGIS-WEB-ADAPTOR-IIS-STABILITY-PATCH,ArcGIS Web Adaptor,2025,BUG-000177402,"When HTTP/2 is enabled on IIS, a burst of concurrent requests sent through the ArcGIS Web Adaptor (IIS) may lead to increased latency and rejected requests that return an HTTP 500 error.",False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000180332,Stored XSS vulnerability in ArcGIS Server.,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000180331,"Stored XSS vulnerability in ArcGIS Server. (11.4, 11.3, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000180329,"Reflected XSS vulnerability in ArcGIS Server. (11.4, 11.3, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000180328,Unvalidated File Upload vulnerability in ArcGIS Server.,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000180326,Unvalidated File Upload vulnerability in ArcGIS Server.,True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000179056,OAuth logins on the Server admin api redirect back to the /login page when using SAML or OIDC logins. (11.5 only),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000178927,Publishing a scene layer from a .slpk file fails if the ArcGIS Server cache directory is not named 'arcgiscache'. (11.4 and 11.5),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000176233,Receive a comma in the Shape_Area output field that does not properly align with the numeric value when running the identify query in a Linux environment. (11.5 only),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000175692,"Reflected XSS vulnerability in ArcGIS Server. (11.4, 11.3, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000173174,"Reflected XSS vulnerability in ArcGIS Server. (11.4, 11.3, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000173070,"Additional queries are displayed in the ArcGIS Server logs when viewing a referenced scene layer, which at times causes performance issues. (11.4)",False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000173043,Requests to services running in Shared Instance Pool will result in 500 wait timeout error after rebooting Windows Server. (11.4 only),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000172966,"Stored XSS vulnerability in ArcGIS Server. (11.4, 11.3, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000172062,"Reflected XSS vulnerability in ArcGIS Server. (11.4, 11.3, 11.1, 10.9.1)",True
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000159629,Recurring ArcGIS Server logs indicate a '.kmz.zip' file cannot be removed from the 'arcgisuploads' directory. (11.3 only),False
+ARCGIS-SERVER-SECURITY-2025-UPDATE-2-PAT,ArcGIS Server,2025,BUG-000121487,Tokens in the X-Esri-Authorization request header are ignored for federated servers. (11.1 and 10.9.1 only),False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000180614,"‘Delete item’ from the ArcGIS Enterprise Settings page keeps loading indefinitely. (11.3, 11.4)",False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000180365,Organization Categories can no longer be edited in ArcGIS Enterprise portal 10.9.1 after installing the Portal for ArcGIS Security 2025 Update 3 Patch. (10.9.1),False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000179799,"When deployed in ArcGIS Enterprise, the Portal for ArcGIS Security 2025 Update 3 Patch adds unexpected HTML (“/>) to the end of the system directory information. (10.9.1)",False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000178599,Unable to uninstall Portal for ArcGIS 11.3 Security 2025 Update 2 Patch B. (11.3),False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000178089,Portal for ArcGIS Security Patch 2 removes the builddate.txt and buildsources.txt from the installation framework.,False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000177447,Stored XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000177331,Upgrading Portal for ArcGIS on Linux from version 10.9.1 will crash if the Portal for ArcGIS Security 2025 Update 2 Patch is installed prior to the upgrade. (10.9.1),False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000176174,Stored XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000176172,Stored XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000176170,Stored Cross Site scripting in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000176169,Stored Cross Site Scripting in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000176168,"Stored XSS vulnerability in Portal for ArcGIS. (11.3, 11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000175222,Reflected XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174160,"Stored XSS vulnerability in Portal for ArcGIS. (11.3, 11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174159,"Stored XSS vulnerability in Portal for ArcGIS. (11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174158,Reflected XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174157,"Reflected XSS vulnerability in Portal for ArcGIS. (11.3, 11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174155,Stored XSS vulnerability in the Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174154,"Reflected XSS vulnerability in Portal for ArcGIS. (11.3, 11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174153,Stored XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174152,"Stored XSS vulnerability in Portal for ArcGIS. (11.3, 11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174151,"Reflected XSS vulnerability in Portal for ArcGIS. (11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174150,Unvalidated redirect in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174149,"Unvalidated redirect in Portal for ArcGIS. (11.4, 11.3 )",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174022,Reflected XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174020,"Reflected XSS vulnerability identified in Portal for ArcGIS. (11.3, 11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174019,"Reflected XSS vulnerability identified in Portal for ArcGIS. (11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000174018,"Reflected XSS vulnerability identified in Portal for ArcGIS. (11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000171009,"URL manipulation vulnerability in Portal for ArcGIS. (11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000164122,"Reflected XSS vulnerability in Portal for ArcGIS. (11.3, 11.1, 10.9.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000161627,Reflected XSS vulnerability in Portal for ArcGIS.,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-3,Portal for ArcGIS,2025,BUG-000157727,"On the Organization > Overview page, the 'Administrative contacts' section fails to load. (10.9.1)",False
+ARCGIS-DATA-STORE-11-5-RELIABILITY-PATCH,ArcGIS Data Store,2026,BUG-000180322,The 'replacesslcertificate' utility for the graph store type shows a self-signed certificate.,False
+ARCGIS-DATA-STORE-11-5-RELIABILITY-PATCH,ArcGIS Data Store,2026,BUG-000180319,The where clause is not being honored for data retention in ArcGIS GeoEvent Server.,False
+ARCGIS-DATA-STORE-11-5-RELIABILITY-PATCH,ArcGIS Data Store,2026,BUG-000180317,The configuration of the graph store is inconsistent.,False
+ARCGIS-WORKFLOW-MANAGER-SERVER-11-3-PATC,ArcGIS Workflow Manager Server,2026,BUG-000176850,: Unable to create jobs when one of the workflow manager services is stopped in HA environment.,False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000184550,"After installing ArcGIS Server 11.4 Security 2026 Update 1 Patch, unable to publish hosted feature services in ArcGIS Enterprise portal. (11.4)",False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000182853,"Incorrect warning message returned when logging into Server Manager. (12.0, 11.5)",False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000182852,"ArcGIS Server has a Security Vulnerability. (12.0, 11.5, 11.4, 11.3, 11.1)",True
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000182380,"After installing the ArcGIS Server 11.3 Security 2025 Update 2 Patch, it is no longer possible to upload .sd files through the ArcGIS REST API endpoint. (11.3 only)",False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000182112,"After installing the ArcGIS Server Security 2025 Update 2 Patch, certain non-English characters included in services may not be displayed correctly in the ArcGIS Server. (11.4, 11.3 and 11.1)",False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000181250,Cannot disable or enable ArcGIS REST Services Directory in ArcGIS Server Administrator Directory (12.0 only),False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000181179,"Restoring Knowledge Graph services using the WebGISDR tool fails. (11.3, 11.4)",False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000181143,Unvalidated Redirect in ArcGIS Server. (11.5),True
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000180128,"After disaster recovery with the WebGISDR restore in a new passive standby environment, the ArcGIS Data Store object store host name is still pointing to the old object store host name in both ArcGIS Data Store (describedatastore) and ArcGIS Server data stores. (12.0 only)",False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000179280,ArcGIS Server javaw.exe does not free memory. (11.3 only),False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-1-PAT,ArcGIS Server,2026,BUG-000176841,Sync Tools crash when creating an offline map area for a federated ArcGIS Server site when user lacks any admin privileges. (11.3 only),False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-2-PAT,ArcGIS Server,2026,BUG-000184622,exceedsLimit statistics query errors when returnCentroid is true for polygon layers. (11.5 only),False
+ARCGIS-SERVER-SECURITY-2026-UPDATE-2-PAT,ArcGIS Server,2026,BUG-000184499,ArcGIS Server has a security vulnerability.,True
+ARCGIS-SERVER-SECURITY-2026-UPDATE-2-PAT,ArcGIS Server,2026,BUG-000181376,ArcGIS Server has a security vulnerability.,True
+ARCGIS-SERVER-SECURITY-2026-UPDATE-2-PAT,ArcGIS Server,2026,BUG-000184110,"When a custom font is specified in a map service's symbology, the resulting dedicated service cannot be stopped successfully in ArcGIS Server Manager when deployed on Linux, leaving an ArcSOC process orphaned on the machine. (11.3 only)",False
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-2,Portal for ArcGIS,2026,BUG-000176212,Server Side Request Forgery (SSRF) vulnerability in Portal for ArcGIS,True
+PORTAL-FOR-ARCGIS-SECURITY-2025-UPDATE-2,Portal for ArcGIS,2026,BUG-000176940,Unable to access Portal Index after installing the Portal for ArcGIS 11.3 Security 2025 Patch 2 Patch when content directory is in an Amazon Web Services (AWS) S3 bucket. (11.3 Only),False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000185267,Upgrade from ArcGIS Enterprise 11.5 to versions 12.0 or 12.1 fails when the Portal for ArcGIS 11.5 Security 2026 Update 1 Patch is installed on Windows. (11.5),False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000184442,'Edit privileges' window of an application created by Developer Credentials is blank after installing Portal for ArcGIS 11.5 Security 2026 Update 1 Patch B. (11.5),False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000184350,"After installing the Portal for ArcGIS Security 2026 Update 1 Patch, access to the ArcGIS Enterprise portal deployment fails on systems configured with web-tier authentication. (12.0, 11.5)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000183038,"Portal for ArcGIS has a security vulnerability.  (12.0, 11.5, 11.4)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000182353,Portal for ArcGIS has a security vulnerability. (11.5 only),True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000181192,The item details page for the web map cannot be accessed when a classification scheme is enabled in ArcGIS Enterprise 11.5. (11.5),False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000173561,"The ""Error: Create Service exception 'java.lang.Exception: Exception: Read timed out"" error message is returned when publishing a hosted feature service via Portal for ArcGIS. (11.5)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-1,Portal for ArcGIS,2026,BUG-000175398,"When the password for a member in an ArcGIS Online or ArcGIS Enterprise account is changed, any API key previously created by the member stops working.(11.5)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-2,Portal for ArcGIS,2026,BUG-000185376,"Portal for ArcGIS has a security vulnerability. (12.1, 12.0, 11.5, 11.3, 11.1)",True
+ARCGIS-WORKFLOW-MANAGER-SERVER-11-5-PATC,ArcGIS Workflow Manager Server,2026,BUG-000176850,Unable to create jobs when one of the Workflow Manager services is stopped in HA environment,False
+ARCGIS-WORKFLOW-MANAGER-SERVER-11-5-PATC,ArcGIS Workflow Manager Server,2026,BUG-000186419,Job history messages are returned out of order,False
+ARCGIS-WORKFLOW-MANAGER-SERVER-11-5-PATC,ArcGIS Workflow Manager Server,2026,BUG-000186441,Invalid step schedules using Date Arcade expressions,False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000185638,"Portal for ArcGIS has a security vulnerability. (12.0, 11.5)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000185529,Creating an ArcGIS Enterprise backup with the WebGIDR tool fails when ArcGIS Velocity is a federated server. (12.1),False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000185513,"After patching Portal for ArcGIS 11.5, adding an external WFS service fails and returns the error messages ""Service does not exist or is inaccessible"" in the user interface and ""unsupported-spatial-reference"" in the browser console. (11.5)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000185212,"In ArcGIS Experience Builder, thumbnails of ArcGIS Online templates are not displayed in ArcGIS Enterprise. (12.1)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000184948,"Portal for ArcGIS has a security vulnerability. (12.0, 11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000184947,"Portal for ArcGIS has a security vulnerability. (12.0 ,11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000184946,"Portal for ArcGIS has a security vulnerability. (11.5, 11.3)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000184944,"Portal for ArcGIS has a security vulnerability. (11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000184943,"Portal for ArcGIS has a security vulnerability. (11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000184486,"Unable to add Active Directory users to ArcGIS Enterprise via the portal home interface, returning the error message “The user 'name' was not found"".  (12.1, 12.0)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000183429,"Portal for ArcGIS has a security vulnerability. (12.0, 11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000183187,Cannot update a member's email more than 80 hours after account creation. (11.5),False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000183679,ArcGIS Experience Builder does not reflect latest changes made to custom widgets. (11.3),False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000182337,"ArcGIS Enterprise returns the ""Invalid password"" error message while importing a Secure Socket Layer (SSL) certificate if the certificate password includes the ^ character. (12.0, 11.5, 11.3, 11.1)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000182186,"Portal for ArcGIS has a security vulnerability. (12.0, 11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000180933,"Portal for ArcGIS has a security vulnerability. (12.1, 12.0, 11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000180761,"Portal for ArcGIS has a security vulnerability. (11.5, 11.3,1 1.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000179225,"Portal for ArcGIS has a security vulnerability. (11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000176591,"Portal for ArcGIS has a security vulnerability. (11.5, 11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000174118,"Portal for ArcGIS has a security vulnerability. (11.3, 11.1)",True
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000178493,"ArcGIS Experience Builder experiences embedded in an external website using an HTML iframe return the error message, ""Item does not exist or is inaccessible,"" even after specifying user credentials. (11.5)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000177797,"When attempting to update a member's email address, it reverts back to the previous one. (11.5)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000177756,"In Experience Builder 1.17, exporting the results of a network trace to CSV format from the Table widget generates empty records on the first attempt, but it works correctly the second time. (11.5)",False
+PORTAL-FOR-ARCGIS-SECURITY-2026-UPDATE-3,Portal for ArcGIS,2026,BUG-000175889,"Edit widget does not display ""Update"" and ""Delete"" buttons when accessed through a Window in ArcGIS Experience Builder. (11.5)",False

@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en-us" dir="ltr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArcGIS Notebook Server Security Patch</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="This security patch addresses multiple security vulnerabilities found in log4j distributed with ArcGIS Notebook Server.  Esri recommends that all customers using ArcGIS Notebook Server 10.7.1 apply th">
+  <meta name="template" content="esri-content-template">
+  <meta name="content-page-ref" content="phEpOqruFZCWc1ZaDLOlzX1WzjybFTBZQoLI25CQlRKgy97SqCrf1tg13GNPz-cb766dNXKVDCGiWeOkzg3P2zF69JyxEn4IeD8OP0O4_-3gDIkV1Am9dofBar9hLgkS0wqlJQdILb2lTTDSCnvLow"/>
+<script defer="defer" type="text/javascript" src="/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js"></script>
+<link rel="canonical" href="https://support.esri.com/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010">
+  <link rel="preconnect" href="//webapps-cdn.esri.com" crossorigin>
+  <link rel="preconnect" href="//js.arcgis.com" crossorigin>
+  <link rel="preconnect" href="//assets.adobedtm.com">
+  <link rel="preconnect" href="//fast.fonts.net" crossorigin>
+  <link rel="stylesheet" href="https://fast.fonts.net/t/1.css?apiType=css&amp;projectid=f9e335c8-e150-4885-976e-f4c392e562c4">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.2/fonts.css">
+  <link rel="dns-prefetch" href="//pi.pardot.com">
+  <link rel="dns-prefetch" href="//js-cdn.dynatrace.com">
+  <link rel="dns-prefetch" href="//cdn.cookielaw.org">
+  <link rel="dns-prefetch" href="//api.company-target.com">
+  <link rel="dns-prefetch" href="//securetags.esri.com">
+  <link rel="dns-prefetch" href="//environmentals.tt.omtrdc.net">
+  <link rel="dns-prefetch" href="//geolocation.onetrust.com">
+  <link rel="modulepreload" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js" crossorigin>
+  <link rel="preload" as="style" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" crossorigin>
+  <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" type="text/css" crossorigin>
+  <link rel="preload" as="style" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" type="text/css" crossorigin="anonymous">
+  <script type="module" src="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js"></script>
+  <script type="text/javascript">
+  window.gnav_jsonPath = "/content/experience-fragments/esri-sites/en-us/site-settings/global-navigation-config/2022-nav-config.25.json"
+</script>
+  <script>
+  window.gnav_mode = ""
+  window.window.gnav_login = ""
+  window.window.gnav_collapseMenus = "" === 'true'
+</script>
+  <script src="https://geoip.esri.com/geoip.js"></script>
+  <style>
+  :root {
+    --secondarytheme-color: oklch(from #62b346 l c h);
+
+    --theme-color: oklch(from #62b346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62b346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+
+    --theme-color-dark: oklch(from #62b346 l c h);
+    --theme-color-dark10: oklch(from var(--theme-color-dark) l c h / 10%);
+    --theme-color-dark50: oklch(from var(--theme-color-dark) l c h / 50%);
+    --theme-color-secondary-dark: oklch(from var(--esri-ui-brand-default) l c h);
+    --theme-color-secondary-dark10: oklch(from var(--theme-color-secondary-dark) l c h / 10%);
+    --theme-color-secondary-dark50: oklch(from var(--theme-color-secondary-dark) l c h / 50%);
+  }
+
+  .calcite-mode-dark {
+    --theme-color: var(--theme-color-dark);
+    --theme-color10: var(--theme-color-dark10);
+    --theme-color50: var(--theme-color-dark50);
+    --theme-color-secondary: var(--theme-color-secondary-dark);
+    --theme-color-secondary10: var(--theme-color-secondary-dark10);
+    --theme-color-secondary50: var(--theme-color-secondary-dark50);
+  }
+
+  .calcite-mode-light {
+    --theme-color: oklch(from #62b346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62b346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+  }
+
+  .theme-secondary {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+
+  .theme-secondary .calcite-mode-light {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+  .theme-secondary .calcite-mode-dark {
+    --theme-color: var(--theme-color-secondary-dark);
+    --theme-color10: var(--theme-color-secondary-dark10);
+    --theme-color50: var(--theme-color-secondary-dark50);
+  }
+</style>
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-180.png">
+  <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-dark-32.png">
+  <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-32.png">
+  <link rel="icon" type="image/svg+xml" sizes="16x16 32x32 48x48 180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon.svg">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010" hreflang="en-us">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010" hreflang="x-default">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site">
+  <meta name="twitter:title" content="ArcGIS Notebook Server Security Patch">
+  <meta property="twitter:url" content="https://support.esri.com/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010">
+  <meta name="twitter:description" content="This security patch addresses multiple security vulnerabilities found in log4j distributed with ArcGIS Notebook Server.  Esri recommends that all customers using ArcGIS Notebook Server 10.7.1 apply th">
+  <meta property="twitter:image" content="https://support.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg">
+  <meta property="fb:app_id">
+  <meta property="og:title" content="ArcGIS Notebook Server Security Patch">
+  <meta property="og:url" content="https://support.esri.com/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010">
+  <meta property="og:description" content="This security patch addresses multiple security vulnerabilities found in log4j distributed with ArcGIS Notebook Server.  Esri recommends that all customers using ArcGIS Notebook Server 10.7.1 apply th">
+  <meta property="og:image" content="https://support.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg">
+  <meta property="og:type" content="website">
+  <meta name="date-sort" content="04/29/2022">
+  <meta name="last-modified" content="04/29/2022">
+  <meta name="created" content="Mon, 20 Mar 2023 19:12:37 GMT">
+  <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "WebPage",
+       "name": "ArcGIS Notebook Server Security Patch",
+        "sourceOrganization" : {
+            "@type": "Organization",
+            "name" : "Esri"
+            },
+            "url": "https://support.esri.com/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010",
+            "image": "https://support.esri.com/content/dam/esrisites/en-us/support/technical-support/patches-updates.jpg",
+            "inLanguage" : {
+                "@type": "Language",
+                "name": "en-us"
+            },
+            "description":"This security patch addresses multiple security vulnerabilities found in log4j distributed with ArcGIS Notebook Server.  Esri recommends that all customers using ArcGIS Notebook Server 10.7.1 apply th"
+        }
+    </script> <!-- Sitelinks Search Box --> <!-- breadcrumb -->
+  <script type="application/ld+json" id="breadcrumbs">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement":  [{"@type":"ListItem","position":1,"name":"Patches and Updates","item":"/en-us/patches-updates"},{"@type":"ListItem","position":2,"name":"2022","item":"/en-us/patches-updates"},{"@type":"ListItem","position":3,"name":"ArcGIS Notebook Server Security Patch","item":"/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010"}]
+ }
+</script>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="product" content="ArcGIS Notebook Server,ArcGIS Enterprise">
+  <meta name="version" content="10.7.1">
+  <meta name="first-published" content="04/29/2022">
+  <meta name="search-category" content="downloads/patches-servicepacks">
+  <meta name="sub-category" content="patches-servicepack">
+  <meta name="operating-system" content="linux,windows">
+  <meta name="cardtype" content="patches and updates">
+  <meta name="search-collection" content="patches-servicepacks">
+  <script src="/etc.clientlibs/esri-sites/clientlibs/datalayer.js"></script>
+  <script>
+  window.dataLayer = Object.assign({}, window.dataLayer, {
+    pageTitle: "Arcgis Notebook Server Security Patch",
+    pageName: "Patches And Updates:2022:Arcgis Notebook Server Security Patch",
+    pagePath: "/content/support/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010",
+    pageType: "",
+    pageSubType: "",
+    metaOgTitle: "ArcGIS Notebook Server Security Patch",
+    metaOgUrl: "https://support.esri.com/en-us/patches-updates/2022/arcgis-notebook-server-security-patch-8010",
+    metaOgDescription: "This security patch addresses multiple security vulnerabilities found in log4j distributed with ArcGIS Notebook Server.  Esri recommends that all customers using ArcGIS Notebook Server 10.7.1 apply th",
+    metaOgImage: "https://support.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg",
+    datePublished: "",
+    domain: window.location.host,
+    environment: "crx3composite,nosamplecontent,publish,cloud\u002Dready",
+    hierarchy1: "Patches And Updates",
+    hierarchy2: "2022",
+    hierarchy3: "",
+    hierarchy4: "",
+    locale: "en-us",
+    resourceType: "esri-sites/components/pages/editablecontentpage",
+    template: "/conf/esri-sites/support/settings/wcm/templates/esri-content-template",
+    language: "en",
+    countryCode: "us",
+    tags: "adobe\u002Danalytics\u002D\u002D\u002Donly\u002Dfor\u002Dsites:page\u002Dtype\/support",
+  })
+</script>
+  <script type="text/javascript">
+  window.storeVariables = Object.assign({}, window.storeVariables, {
+    eCommUrl: "https://support.esri.com/api/ecomm",
+    lookupUrl: "https://ecomm-api.esri.com/lookup",
+    accountsUrl: "https://support.esri.com/en-us/signin",
+    checkoutUrl: "https://support.esri.com/checkout",
+    cartUrl: "https://support.esri.com/en-us/store/cart",
+    customerNumberUrl: "https://support.esri.com/en-us/store/customer-number",
+  })
+</script>
+  <meta name="color theme" content="62b346"> <!-- /* Clientlibs */ -->
+  <link rel="stylesheet" href="/etc.clientlibs/esri-sites/clientlibs/components.css" type="text/css">
+  <script type="text/javascript" src="//assets.adobedtm.com/2d251f50426c/e52f833be42a/launch-EN26af1ee4ef084984926fd80d1cb93835.min.js"></script>
+  <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/event-detail/clientlibs.css" type="text/css">
+ </head>
+ <body class="editablecontentpage page basicpage support-chat" id="editablecontentpage-59648c4225" data-instant-intensity="viewport">
+  <div class="cmp-page__skiptomaincontent"><a class="cmp-page__skiptomaincontent-link" href="#main-content">Skip to main content</a>
+  </div>
+  <link rel="stylesheet" href="/etc.clientlibs/core/wcm/components/page/v2/page/clientlibs/site/skiptomaincontent.css" type="text/css">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/global-nav/css/gn.css">
+  <script src="https://webapps-cdn.esri.com/CDN/components/global-nav/js/gn.js"></script>
+  <header id="globalnav" aria-label="Main" class="calcite-mode-light"></header>
+  <main id="main-content">
+   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    <div class="local-navigation aem-GridColumn aem-GridColumn--default--12">
+     <nav id="second-nav" domain="" navtype="existingNavigation" path="/content/support/en-us/overview"></nav>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-4
+  padding-trailer-2
+  has-background
+  has-background--color
+  
+  has-background--cover
+  
+  " style="--bg-color: #EDF8FF;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-e6b6bb8acb" class="cmp-container">
+        <div class="experiencefragment">
+         <div class="xf-content-height">
+          <div class="root responsivegrid">
+           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+            <div class="simple-search aem-GridColumn aem-GridColumn--default--12">
+             <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.css" type="text/css">
+             <script defer src="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.js"></script>
+             <div class="sra-search-field">
+              <form id="sraForm" data-search-path="https://support.esri.com/en-us/search"><calcite-input placeholder="Search" icon="magnifying-glass" scale="l"></calcite-input>
+              </form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-2
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-8553ae36d8" class="cmp-container">
+        <div class="columnsystem">
+         <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/layouts/columnsystem/clientlibs.css" type="text/css">
+         <div class="column-10 tablet-column-8 phone-column-6 trailer-2" data-aem-columnsys="column-10 trailer-2">
+          <div id="container-d51df58bb5" class="cmp-container">
+           <div class="esri-text">
+            <div class="esri-text-container">
+             <div data-icon="/content/dam/esrisites/en-us/common/icons/meridian-/app-update-64.svg" class="esri-text__iconContainer">
+              <svg id="icon-ui-svg" class="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 64 64">
+               <path d="M37 50.626l-9.97 4.72L6.1 48.813V16.472l20.87-9.817 20.93 6.47v16.93c-.27.024-.535.06-.8.1v-16.44L27.03 7.51 6.9 16.979v31.247l20.07 6.262L37 49.741zM59.1 43a10.082 10.082 0 0 1-18.904 4.9H47v-.8h-7.9V55h.8v-6a10.9 10.9 0 0 0 20-6zm-20.2 0h-.8a10.9 10.9 0 0 1 20-6v-6h.8v7.9H51v-.8h6.804A10.082 10.082 0 0 0 38.9 43z" id="icon-ui-svg--base" />
+              </svg>
+             </div>
+             <p class="esri-text__category" id="b62df1a367a07c0bcfaf67744542b23225c67623f9fb1b9f3dc01a20b166dd94">Patches and updates</p>
+             <h1 class="esri-text__title" aria-describedby="b62df1a367a07c0bcfaf67744542b23225c67623f9fb1b9f3dc01a20b166dd94">ArcGIS Notebook Server Security Patch</h1>
+            </div>
+           </div>
+           <div class="raw-html-for-js-app">
+            <div style="background-color:white; padding-top: 10px"><calcite-chip scale="m" appearance="solid" color="grey">
+              Published: March 28, 2022
+             </calcite-chip>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="separator">
+         <hr class="separator full-width left-align">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+      <div class="grid-container ">
+       <div id="container-558824ea3b" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-6 tablet-column-12 phone-column-12" data-aem-columnsys="column-6">
+          <div id="container-609f866381" class="cmp-container">
+           <nav data-cmp-is="toc" class="esri-toc">
+            <div class="cmp-toc__content" id="tableofcontents-3ce320c93b">
+             <ul>
+              <li><a href="#summary">Summary</a></li>
+              <li><a href="#description">Description</a></li>
+              <li><a href="#issues-addressed-with-this-patch">Issues Addressed with this patch</a></li>
+              <li><a href="#installing-this-patch-on-windows">Installing this patch on Windows</a>
+               <ul>
+                <li><a href="#installation-steps:">Installation Steps:</a></li>
+                <li><a href="#post-installation-steps-for-installing-the-advanced-notebook-runtime-image-on-windows.">Post installation steps for installing the Advanced Notebook Runtime Image on Windows.</a></li>
+               </ul></li>
+              <li><a href="#installing-this-patch-on-linux">Installing this patch on Linux</a>
+               <ul>
+                <li><a href="#installation-steps:-1">Installation Steps:</a></li>
+                <li><a href="#post-installation-steps-for-installing-the-advanced-notebook-runtime-image-on-linux.">Post installation steps for installing the Advanced Notebook Runtime Image on linux.</a></li>
+               </ul></li>
+              <li><a href="#uninstalling-this-patch-on-windows">Uninstalling this patch on Windows</a></li>
+              <li><a href="#uninstalling-this-patch-on-linux">Uninstalling this patch on Linux</a></li>
+              <li><a href="#patch-updates">Patch Updates</a></li>
+              <li><a href="#how-to-identify-which-arcgis-products-are-installed">How to identify which ArcGIS products are installed</a></li>
+              <li><a href="#getting-help">Getting Help</a></li>
+             </ul>
+            </div>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="columnsystem">
+         <div class="column-18" data-aem-columnsys="column-18">
+          <div id="container-0d66789cd6" class="cmp-container">
+           <div class="esri-title">
+            <div id="title-29dfc2707d" class="cmp-title">
+             <h3 class="cmp-title__text" id="summary">Summary</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-2908aa47e1" class="cmp-text">
+             This security patch addresses multiple security vulnerabilities found in log4j distributed with ArcGIS Notebook Server. Esri recommends that all customers using ArcGIS Notebook Server 10.7.1 apply this patch.<br><br>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-c131077510" class="cmp-title">
+             <h3 class="cmp-title__text" id="description">Description</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-12b62084ee" class="cmp-text">
+             <p>Esri® announces the ArcGIS Notebook Server Security Patch. Esri recommends that all customers using ArcGIS Notebook Server 10.7.1 apply this patch.</p>
+             <p>This patch deals specifically with the issues listed below under <a href="#bugs">Issues Addressed with this patch</a>.</p>
+             <h3 id="issues-addressed-with-this-patch"><a name="bugs" id="bugs"></a>Issues Addressed with this patch</h3>
+             <ul>
+              <li>BUG-000147723 - Update Log4j in ArcGIS Notebook Server to address security vulnerabilities.</li>
+              <li>BUG-000147725 - Update ArcGIS Notebook server postinstallation utility to support updating notebook runtimes with new imageId.</li>
+              <li><p>Please see <a href="https://www.esri.com/arcgis-blog/products/trust-arcgis/administration/arcgis-enterprise-log4j-security-patches-available/">ArcGIS Enterprise Log4j Security Patches Available</a> for further details.</p></li>
+             </ul>
+             <p>To avoid conflicts this patch also addresses:</p>
+             <ul>
+              <li>BUG-000139408 - There is a denial-of-service security vulnerability in ArcGIS Notebook Server.</li>
+             </ul>
+             <p>&nbsp;</p>
+             <h3 id="installing-this-patch-on-windows"><a name="install" id="install"></a>Installing this patch on Windows</h3>
+             <p>&nbsp;</p>
+             <h4 id="installation-steps:">Installation Steps:</h4>
+             <p>&nbsp;</p>
+             <p>This patch should be installed on all ArcGIS Notebook Server installations related to the ArcGIS Notebook Server site.</p>
+             <p>The ArcGIS product listed in the table must be installed on your system before you can install a patch. Each patch setup is specific to the ArcGIS product in the list. To determine which products are installed on your system, please see the <a href="#idsp">How to identify which ArcGIS products are installed</a> section. Esri recommends that you install the patch for each product that is on your system.</p>
+             <ol>
+              <li>Download the appropriate file to a location other than your ArcGIS installation location.<br> <br>
+               <div data-cmp-is="table" class="esri-table table--stripped">
+                <table cellspacing="5">
+                 <tbody>
+                  <tr>
+                   <td width="514"><b>ArcGIS Enterprise 10.7.1</b></td>
+                   <td width="550">&nbsp;</td>
+                  </tr>
+                  <tr>
+                   <td width="514">&nbsp;</td>
+                   <td width="550">&nbsp;</td>
+                  </tr>
+                  <tr>
+                   <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>ArcGIS Notebook Server</b></td>
+                   <td><a href="https://gisupdates.esri.com/QFE/NBS-1071-P-746/ArcGIS-1071-NBS-Log4j-Patch.msp"> ArcGIS-1071-NBS-Log4j-Patch.msp</a></td>
+                  </tr>
+                  <tr>
+                   <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checksum <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                   <td align="left"><code>5E846200922DF94B9F0408258310E6DFE560B038B7BB74D60621EA31067E30BB</code></td>
+                  </tr>
+                  <tr>
+                   <td width="222">&nbsp;</td>
+                   <td width="348">&nbsp;</td>
+                  </tr>
+                 </tbody>
+                </table>
+               </div> <br></li>
+              <li>Make sure you have write access to your ArcGIS installation location.</li>
+              <li>Double-click ArcGIS-1071-NBS-Log4j-Patch.msp to start the setup process.<br> <br> NOTE: If double clicking on the MSP file does not start the setup installation, you can start the setup installation manually by using the following command:<br> <br> <code>msiexec.exe /p [location of Patch]\ArcGIS-1071-Log4j-Patch.msp</code><br></li>
+             </ol>
+             <p>&nbsp;</p>
+             <h4 id="post-installation-steps-for-installing-the-advanced-notebook-runtime-image-on-windows.">Post installation steps for installing the Advanced Notebook Runtime Image on Windows.</h4>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>Complete the following steps to download and install the advanced runtime image included with this patch.</p>
+              <ol>
+               <li>Download the advanced runtime image file to a location other than your ArcGIS installation location.<br> <br>
+                <div data-cmp-is="table" class="esri-table table--stripped">
+                 <table cellspacing="5">
+                  <tbody>
+                   <tr>
+                    <td width="514"><b>ArcGIS Enterprise 10.7.1</b></td>
+                    <td width="550">&nbsp;</td>
+                   </tr>
+                   <tr>
+                    <td width="514">&nbsp;</td>
+                    <td width="550">&nbsp;</td>
+                   </tr>
+                   <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>ArcGIS Notebook Server Advanced</b></td>
+                    <td><a href="https://gisupdates.esri.com/QFE/NBS-1071-P-746/arcgis-notebook-python-advanced-10.7.1.11595.1.tar.gz"> arcgis-notebook-python-advanced-10.7.1.11595.1.tar.gz</a></td>
+                   </tr>
+                   <tr>
+                    <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checksum <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                    <td align="left"><code>C061CE6EC92D7FA50965C71D4B7BB2CF70823D64338EA45DA38856D2286BE470</code></td>
+                   </tr>
+                   <tr>
+                    <td width="222">&nbsp;</td>
+                    <td width="348">&nbsp;</td>
+                   </tr>
+                  </tbody>
+                 </table>
+                </div> <br></li>
+               <li>Open the command prompt window as an administrator.</li>
+               <li>Change directories to the ArcGIS Notebook Server tools folder. By default,this path is C:\Program Files\ArcGIS\NotebookServer\tools\postInstallUtility.</li>
+               <li>Optionally, refer to the utility's help by running the following command:<br> <br> <code>&gt; PostInstallUtility.bat -h</code></li>
+               <li>Install the Docker image arcgis-notebook-python-advanced-10.7.1.11595.1.tar.gz by specifying its file path. The image should be zipped in the .tar.gz format. Run the following command:<br> <br> <code>&gt; PostInstallUtility.bat -l arcgis-notebook-python-advanced-10.7.1.11595.1.tar.gz</code></li>
+               <li>Run the following command to update the imageId in the advanced runtime:<br> <br> <code>&gt; PostInstallUtility.bat -r 10.7.1 true false</code></li>
+              </ol>
+              <ul></ul>
+             </div>
+             <p>&nbsp;</p>
+             <h3 id="installing-this-patch-on-linux"><a name="install-Unix" id="install-Unix"></a>Installing this patch on Linux</h3>
+             <h4 id="installation-steps:-1">Installation Steps:</h4>
+             <p>Complete the following install steps as the ArcGIS Install owner. The Install owner is the owner of the arcgis folder. This patch should be installed on all ArcGIS Notebook Server installations related to the ArcGIS Notebook Server site.</p>
+             <p>The ArcGIS product listed in the table must be installed on your system before you can install a patch. Each patch setup is specific to the ArcGIS product in the list. To determine which products are installed on your system, please see the <a href="#idsp">How to identify which ArcGIS products are installed</a> section. Esri recommends that you install the patch for each product that is on your system.</p>
+             <ol>
+              <li>Download the appropriate file to a location other than your ArcGIS installation location.<br> <br> <br>
+               <div data-cmp-is="table" class="esri-table table--stripped">
+                <table width="893" cellspacing="10">
+                 <tbody>
+                  <tr>
+                   <td width="514"><b>ArcGIS Enterprise 10.7.1</b></td>
+                   <td width="550">&nbsp;</td>
+                  </tr>
+                  <tr>
+                   <td width="514">&nbsp;</td>
+                   <td width="550">&nbsp;</td>
+                  </tr>
+                  <tr>
+                   <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>ArcGIS Notebook Server</b></td>
+                   <td><a href="https://gisupdates.esri.com/QFE/NBS-1071-P-746/ArcGIS-1071-NBS-Log4j-Patch-linux.tar"> ArcGIS-1071-NBS-Log4j-Patch-linux.tar</a></td>
+                  </tr>
+                  <tr>
+                   <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checksum <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                   <td align="left"><code>ABF431C2A49E766A9A9C1C892FDC45BE51ED2EB914F2753D1FE442D132A99DCC</code></td>
+                  </tr>
+                  <tr>
+                   <td width="497">&nbsp;</td>
+                   <td width="391">&nbsp;</td>
+                  </tr>
+                 </tbody>
+                </table>
+               </div> <br></li>
+              <li>Make sure you have write access to your ArcGIS installation location, and that no one is using ArcGIS.</li>
+              <li>Extract the specified tar file by typing:<br> <br> <code>% tar -xvf ArcGIS-1071-NBS-Log4j-Patch-linux.tar</code></li>
+              <li>Start the installation by typing:<br> <br> <code>% ./applypatch </code><br> <br> This will start the dialog for the menu-driven installation procedure. Default selections are noted in parentheses ( ). To quit the installation procedure, type 'q' at any time.</li>
+             </ol>
+             <h4 id="post-installation-steps-for-installing-the-advanced-notebook-runtime-image-on-linux.">Post installation steps for installing the Advanced Notebook Runtime Image on linux.</h4>
+             <p>Complete the following steps to download and install the advanced runtime image included with this patch.</p>
+             <div style="	margin-left: 20.0pt;
+">
+              <ol>
+               <li>Download the advanced runtime image file to a location other than your ArcGIS installation location.<br> <br>
+                <div data-cmp-is="table" class="esri-table table--stripped">
+                 <table cellspacing="5">
+                  <tbody>
+                   <tr>
+                    <td width="514"><b>ArcGIS Enterprise 10.7.1</b></td>
+                    <td width="550">&nbsp;</td>
+                   </tr>
+                   <tr>
+                    <td width="514">&nbsp;</td>
+                    <td width="550">&nbsp;</td>
+                   </tr>
+                   <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>ArcGIS Notebook Server Advanced</b></td>
+                    <td><a href="https://gisupdates.esri.com/QFE/NBS-1071-P-746/arcgis-notebook-python-advanced-10.7.1.11595.1.tar.gz"> arcgis-notebook-python-advanced-10.7.1.11595.1.tar.gz</a></td>
+                   </tr>
+                   <tr>
+                    <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checksum <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHA256)</b></td>
+                    <td align="left"><code>C061CE6EC92D7FA50965C71D4B7BB2CF70823D64338EA45DA38856D2286BE470</code></td>
+                   </tr>
+                   <tr>
+                    <td width="222">&nbsp;</td>
+                    <td width="348">&nbsp;</td>
+                   </tr>
+                  </tbody>
+                 </table>
+                </div> <br></li>
+               <li>Open a terminal using the ArcGIS Notebook Server installation account.</li>
+               <li>Change directories to the ArcGIS Notebook Server tools folder. By default, this path is ${HOME}/arcgis/notebookserver/tools/postInstallUtility.</li>
+               <li>Optionally, refer to the utility's help by running the following command:<br> <br> <code>&gt; ./PostInstallUtility.sh -h</code></li>
+               <li>Install the Docker image arcgis-notebook-python-advanced-10.7.1.11595.1.tar.gz by specifying its file path. The image should be zipped in the .tar.gz format. Run the following command:<br> <br> <code>&gt; ./PostInstallUtility.sh -l arcgis-notebook-python-advanced-10.7.1.11595.1.tar.g</code></li>
+               <li>Run the following command to update the imageId in the advanced runtime:<br> <br> <code>&gt; PostInstallUtility.sh -r 10.7.1 true false</code></li>
+              </ol>
+             </div>
+             <h3 id="uninstalling-this-patch-on-windows"><a name="uninstall" id="uninstall"></a>Uninstalling this patch on Windows</h3>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>ArcGIS Notebook Server Security Patch for Windows cannot be uninstalled, the usual Uninstall in the Windows Control Panel is disabled.</p>
+             </div>
+             <h3 id="uninstalling-this-patch-on-linux"><a name="uninstall-Unix" id="uninstall-Unix"></a>Uninstalling this patch on Linux</h3>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>ArcGIS Notebook Server Security Patch for Linux should not be uninstalled. The uninstall is not disabled, but it is recommended that you completely uninstall the product and then re-install if it becomes necessary.</p>
+             </div>
+             <h3 id="patch-updates"><a name="updates" id="updates"></a>Patch Updates</h3>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>Check the <a href="http://support.esri.com/en/downloads/patches-servicepacks">Patches and Service Packs</a> page periodically for the availability of additional patches. New information about this patch will be posted here.</p>
+             </div>
+             <h3 id="how-to-identify-which-arcgis-products-are-installed"><a name="idsp" id="idsp"></a>How to identify which ArcGIS products are installed</h3>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>To determine which ArcGIS products are installed, choose the appropriate version of the PatchFinder utility for your environment and run it from your local machine. PatchFinder will list all products, hot fixes, and patches installed on your local machine.</p>
+              <div style="	margin-left: 20.0pt;
+">
+               <ul>
+                <li><a href="https://downloads.esri.com/Support/downloads/other_/PatchFinder.exe">PatchFinder for Windows</a></li>
+                <li><a href="https://downloads.esri.com/Support/downloads/other_/PatchFinder.tar">PatchFinder for Linux/Unix</a></li>
+               </ul>
+              </div>
+             </div>
+             <h3 id="getting-help"><a name="help" id="help"></a>Getting Help</h3>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>Domestic sites, please contact Esri Technical Support at 1-888-377-4575, if you have any difficulty installing this patch. International sites, please contact your local <a href="http://www.esri.com/about-esri/offices/index.html">Esri software distributor</a>.</p>
+             </div>
+            </div>
+           </div>
+           <div class="separator">
+            <hr class="separator full-width left-align">
+           </div>
+           <div class="esri-text">
+            <div id="text-378b163b23" class="cmp-text">
+             <p><br> Download ID:8010<br></p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+      <div class="grid-container ">
+       <div id="container-ad61e12a89" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-12 pre-6" data-aem-columnsys="column-12">
+          <div id="container-e230cbf214" class="cmp-container">
+           <div class="experiencefragment">
+            <div class="xf-content-height">
+             <div class="root responsivegrid">
+              <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+               <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+                <style>
+#feedback{
+    text-align: center;
+}
+
+#feedback .withborder{
+border-bottom: 1px solid #cacaca;
+}
+#feedback .esri-title,  .raw-html-for-js-app{
+display:inline-block;
+}
+#feedback .technical-feedback-top .cmp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+flex-wrap: wrap;
+}
+
+
+.feedback-link{
+margin-bottom: 0;
+    padding-top: 13px;
+}
+
+.more-help-section svg{
+height:auto;
+width:48px;
+}
+</style>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-0
+  trailer-2
+  padding-leader-0
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-db407cbfea" class="cmp-container">
+                   <div class="columnsystem">
+                    <div class="column-12" data-aem-columnsys="column-12">
+                     <div id="container-1dce938ed7" class="cmp-container">
+                      <div class="raw-html-for-js-app">
+                       <style>
+
+.esri-technical-info-contact {
+    margin: var(--space-4) 0 var(--space-16);
+    padding-block-end: var(--space-10);
+    background:  #edf8ff;
+}
+
+.esri-technical-info-contact .feedback-section {
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid var(--calcite-ui-border-1);
+    padding-bottom: var(--space-6);
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section {
+        flex-direction: row;
+    }
+}
+.esri-technical-info-contact .feedback-section span {
+    margin-right: var(--space-4);
+}
+.esri-technical-info-contact .feedback-section .feedback-section-click {
+    text-align: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-click {
+        border-right: 1px solid var(--calcite-ui-border-1);
+        padding-inline-end: var(--space-8);
+    }
+}
+.esri-technical-info-contact .feedback-section .feedback-section-email {
+    text-align: center;
+    padding-top: var(--space-3);
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-email {
+        padding-inline-start: var(--space-8);
+        padding-top: 0;
+    }
+}
+.esri-technical-info-contact .more-help-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 760px) {
+    .esri-technical-info-contact .more-help-section {
+        flex-direction: row;
+    }
+}
+
+.esri-technical-info-contact .more-help-section div {
+    flex-basis: 50%;
+    text-align: center;
+    padding-block-start:var(--space-10);
+}
+
+.esri-technical-info-contact .more-help-section img,
+.esri-technical-info-contact .more-help-section svg {
+    width: 48px;
+    fill: var(--theme-color-secondary);
+}
+
+  </style>
+                       <div class="esri-technical-info column-24">
+                        <div class="esri-technical-info-details column-18">
+                         <div class="esri-technical-info-contact">
+                          <div class="more-help-section">
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svgz" viewbox="0 0 48 48">
+                             <path d="M20 12.086C9.027 12.086.1 18.176.1 25.662c0 4 2.483 7.504 7.185 10.151l-2.275 6.34 10.31-3.596c.538.066 3.179.38 4.68.38 11.159 0 19.9-5.83 19.9-13.275 0-7.486-8.927-13.576-19.9-13.576zm0 26.052c-1.592 0-4.644-.383-4.674-.387l-.093-.011-8.904 3.106 1.94-5.406-.302-.164C4.743 33.522.9 30.43.9 25.662c0-7.044 8.568-12.776 19.1-12.776s19.1 5.732 19.1 12.776c0 6.996-8.39 12.476-19.1 12.476zm23.335-23.055l.47.646-2.424 1.767-.47-.646zm-7.517-2.822l-.681-.419 1.57-2.556.681.42zM47 24.101v.799h-3v-.8zm-27.5.374a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0zM9.5 24.475a1.025 1.025 0 1 0 1.025 1.025A1.026 1.026 0 0 0 9.5 24.475zM9.275 25.5a.225.225 0 1 1 .45 0c0 .248-.45.248-.45 0zM29.5 24.475a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Get help from ArcGIS experts</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/contact.html">
+                             Contact technical support
+                            </calcite-link>
+                           </div>
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
+                             <path d="M23.138 37l-.55 1.1h3.823l-.55-1.1h.895l.95 1.9h-6.412l.95-1.9zm19.96-1.9H6v.8h37.099zm-8.09-14.2H37v-.8h-1.993zM46.9 37.474V39.5a4.405 4.405 0 0 1-4.4 4.4h-36a4.405 4.405 0 0 1-4.4-4.4v-2.026h.021a3.374 3.374 0 0 1 .283-1.38l7.27-16A3.405 3.405 0 0 1 12.77 18.1h1.237v.8H12.77a2.602 2.602 0 0 0-2.367 1.524l-7.27 16A2.6 2.6 0 0 0 5.499 40.1h38.002a2.6 2.6 0 0 0 2.366-3.676l-7.27-16A2.602 2.602 0 0 0 36.23 18.9h-1.223v-.8h1.223a3.405 3.405 0 0 1 3.095 1.993l7.27 16a3.372 3.372 0 0 1 .284 1.38zm-.818 2.197a3.362 3.362 0 0 1-2.581 1.229H5.499a3.364 3.364 0 0 1-2.581-1.229 3.595 3.595 0 0 0 3.582 3.43h36a3.595 3.595 0 0 0 3.582-3.43zM12 20.9h2.007v-.8H12zM24.507.1c-5.495 0-8.4 2.183-8.4 6.313v16.329l8.4 8.455 8.4-8.455V6.412c0-4.13-2.905-6.312-8.4-6.312zm7.6 22.312l-7.6 7.65-7.6-7.65v-16c0-3.657 2.557-5.512 7.6-5.512s7.6 1.855 7.6 5.513zM24.506 5.1a4.4 4.4 0 1 0 4.4 4.4 4.405 4.405 0 0 0-4.4-4.4zm0 8a3.6 3.6 0 1 1 3.6-3.6 3.604 3.604 0 0 1-3.6 3.6z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Download the Esri Support App</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/app.html">
+                             Go to download options
+                            </calcite-link>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-1b5fcc3cd0" class="cmp-container">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+     <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/css/support-ai-chatbot.css">
+     <div id="support-ai-chatbot"></div>
+     <script defer src="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/js/support-ai-chatbot.js"></script>
+    </div>
+   </div>
+  </main>
+  <script defer src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+  <script defer src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/container.js"></script>
+  <script defer src="/etc.clientlibs/esri-sites/clientlibs/components.js"></script>
+  <div hidden>
+   <span id="new-window">opens in new window</span>
+  </div> <calcite-modal id="page-modal" scale="m" width="m" aria-modal="true" role="dialog">
+   <div slot="header"></div>
+   <div slot="content"></div> 
+  </calcite-modal>
+  <div id="live-region" class="assistText" aria-live="polite"></div>
+  <script src="https://webapps-cdn.esri.com/CDN/packages/instant.page/instantpage.min.js"></script>
+  <script src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"></script>
+  <script type="text/javascript">_satellite.pageBottom();</script>
+  <script src="/etc.clientlibs/esri-sites/clientlibs/clientlib-dependencies.js"></script>
+ </body>
+</html>

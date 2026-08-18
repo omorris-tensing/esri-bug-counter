@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en-us" dir="ltr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArcGIS GeoEvent Server 10.6.1 Patch 3</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="This patch includes enhancements and addresses issues, including multiple security vulnerabilities found in log4j distributed with ArcGIS GeoEvent Server. Esri recommends that all customers using ArcG">
+  <meta name="template" content="esri-content-template">
+  <meta name="content-page-ref" content="phEpOqruFZCWc1ZaDLOlzX1WzjybFTBZQoLI25CQlRKgy97SqCrf1tg13GNPz-cb2fjUvCSMHGzW0zj838eNcFZrg-fxgu61C9QHBcKUoZ8bc3CS14A5QcU0U15b9Z3Q0wqlJQdILb2lTTDSCnvLow"/>
+<script defer="defer" type="text/javascript" src="/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js"></script>
+<link rel="canonical" href="https://support.esri.com/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002">
+  <link rel="preconnect" href="//webapps-cdn.esri.com" crossorigin>
+  <link rel="preconnect" href="//js.arcgis.com" crossorigin>
+  <link rel="preconnect" href="//assets.adobedtm.com">
+  <link rel="preconnect" href="//fast.fonts.net" crossorigin>
+  <link rel="stylesheet" href="https://fast.fonts.net/t/1.css?apiType=css&amp;projectid=f9e335c8-e150-4885-976e-f4c392e562c4">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.2/fonts.css">
+  <link rel="dns-prefetch" href="//pi.pardot.com">
+  <link rel="dns-prefetch" href="//js-cdn.dynatrace.com">
+  <link rel="dns-prefetch" href="//cdn.cookielaw.org">
+  <link rel="dns-prefetch" href="//api.company-target.com">
+  <link rel="dns-prefetch" href="//securetags.esri.com">
+  <link rel="dns-prefetch" href="//environmentals.tt.omtrdc.net">
+  <link rel="dns-prefetch" href="//geolocation.onetrust.com">
+  <link rel="modulepreload" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js" crossorigin>
+  <link rel="preload" as="style" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" crossorigin>
+  <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" type="text/css" crossorigin>
+  <link rel="preload" as="style" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/esri-ui/0.9.0/css/esri-ui.css" type="text/css" crossorigin="anonymous">
+  <script type="module" src="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js"></script>
+  <script type="text/javascript">
+  window.gnav_jsonPath = "/content/experience-fragments/esri-sites/en-us/site-settings/global-navigation-config/2022-nav-config.25.json"
+</script>
+  <script>
+  window.gnav_mode = ""
+  window.window.gnav_login = ""
+  window.window.gnav_collapseMenus = "" === 'true'
+</script>
+  <script src="https://geoip.esri.com/geoip.js"></script>
+  <style>
+  :root {
+    --secondarytheme-color: oklch(from #62b346 l c h);
+
+    --theme-color: oklch(from #62b346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62b346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+
+    --theme-color-dark: oklch(from #62b346 l c h);
+    --theme-color-dark10: oklch(from var(--theme-color-dark) l c h / 10%);
+    --theme-color-dark50: oklch(from var(--theme-color-dark) l c h / 50%);
+    --theme-color-secondary-dark: oklch(from var(--esri-ui-brand-default) l c h);
+    --theme-color-secondary-dark10: oklch(from var(--theme-color-secondary-dark) l c h / 10%);
+    --theme-color-secondary-dark50: oklch(from var(--theme-color-secondary-dark) l c h / 50%);
+  }
+
+  .calcite-mode-dark {
+    --theme-color: var(--theme-color-dark);
+    --theme-color10: var(--theme-color-dark10);
+    --theme-color50: var(--theme-color-dark50);
+    --theme-color-secondary: var(--theme-color-secondary-dark);
+    --theme-color-secondary10: var(--theme-color-secondary-dark10);
+    --theme-color-secondary50: var(--theme-color-secondary-dark50);
+  }
+
+  .calcite-mode-light {
+    --theme-color: oklch(from #62b346 l c h);
+    --theme-color10: oklch(from var(--theme-color) l c h / 10%);
+    --theme-color50: oklch(from var(--theme-color) l c h / 50%);
+    --theme-color-secondary: oklch(from #62b346 l c h);
+    --theme-color-secondary10: oklch(from var(--theme-color-secondary) l c h / 10%);
+    --theme-color-secondary50: oklch(from var(--theme-color-secondary) l c h / 50%);
+  }
+
+  .theme-secondary {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+
+  .theme-secondary .calcite-mode-light {
+    --theme-color: var(--theme-color-secondary);
+    --theme-color10: var(--theme-color-secondary10);
+    --theme-color50: var(--theme-color-secondary50);
+  }
+  .theme-secondary .calcite-mode-dark {
+    --theme-color: var(--theme-color-secondary-dark);
+    --theme-color10: var(--theme-color-secondary-dark10);
+    --theme-color50: var(--theme-color-secondary-dark50);
+  }
+</style>
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-180.png">
+  <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-dark-32.png">
+  <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-32.png">
+  <link rel="icon" type="image/svg+xml" sizes="16x16 32x32 48x48 180x180" href="https://support.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon.svg">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002" hreflang="en-us">
+  <link rel="alternate" href="https://support.esri.com/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002" hreflang="x-default">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site">
+  <meta name="twitter:title" content="ArcGIS GeoEvent Server 10.6.1 Patch 3">
+  <meta property="twitter:url" content="https://support.esri.com/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002">
+  <meta name="twitter:description" content="This patch includes enhancements and addresses issues, including multiple security vulnerabilities found in log4j distributed with ArcGIS GeoEvent Server. Esri recommends that all customers using ArcG">
+  <meta property="twitter:image" content="https://support.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg">
+  <meta property="fb:app_id">
+  <meta property="og:title" content="ArcGIS GeoEvent Server 10.6.1 Patch 3">
+  <meta property="og:url" content="https://support.esri.com/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002">
+  <meta property="og:description" content="This patch includes enhancements and addresses issues, including multiple security vulnerabilities found in log4j distributed with ArcGIS GeoEvent Server. Esri recommends that all customers using ArcG">
+  <meta property="og:image" content="https://support.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg">
+  <meta property="og:type" content="website">
+  <meta name="date-sort" content="05/11/2022">
+  <meta name="last-modified" content="05/11/2022">
+  <meta name="created" content="Mon, 20 Mar 2023 19:12:36 GMT">
+  <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "WebPage",
+       "name": "ArcGIS GeoEvent Server 10.6.1 Patch 3",
+        "sourceOrganization" : {
+            "@type": "Organization",
+            "name" : "Esri"
+            },
+            "url": "https://support.esri.com/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002",
+            "image": "https://support.esri.com/content/dam/esrisites/en-us/support/technical-support/patches-updates.jpg",
+            "inLanguage" : {
+                "@type": "Language",
+                "name": "en-us"
+            },
+            "description":"This patch includes enhancements and addresses issues, including multiple security vulnerabilities found in log4j distributed with ArcGIS GeoEvent Server. Esri recommends that all customers using ArcG"
+        }
+    </script> <!-- Sitelinks Search Box --> <!-- breadcrumb -->
+  <script type="application/ld+json" id="breadcrumbs">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement":  [{"@type":"ListItem","position":1,"name":"Patches and Updates","item":"/en-us/patches-updates"},{"@type":"ListItem","position":2,"name":"2022","item":"/en-us/patches-updates"},{"@type":"ListItem","position":3,"name":"ArcGIS GeoEvent Server 10.6.1 Patch 3","item":"/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002"}]
+ }
+</script>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="product" content="ArcGIS Enterprise,ArcGIS GeoEvent Server,ArcGIS Server">
+  <meta name="version" content="10.6.1">
+  <meta name="first-published" content="03/18/2022">
+  <meta name="search-category" content="downloads/patches-servicepacks">
+  <meta name="sub-category" content="patches-servicepack">
+  <meta name="operating-system" content="linux,windows">
+  <meta name="cardtype" content="patches and updates">
+  <meta name="search-collection" content="patches-servicepacks">
+  <script src="/etc.clientlibs/esri-sites/clientlibs/datalayer.js"></script>
+  <script>
+  window.dataLayer = Object.assign({}, window.dataLayer, {
+    pageTitle: "Arcgis Geoevent Server 10.6.1 Patch 3",
+    pageName: "Patches And Updates:2022:Arcgis Geoevent Server 10.6.1 Patch 3",
+    pagePath: "/content/support/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002",
+    pageType: "",
+    pageSubType: "",
+    metaOgTitle: "ArcGIS GeoEvent Server 10.6.1 Patch 3",
+    metaOgUrl: "https://support.esri.com/en-us/patches-updates/2022/arcgis-geoevent-server-10-6-1-patch-3-8002",
+    metaOgDescription: "This patch includes enhancements and addresses issues, including multiple security vulnerabilities found in log4j distributed with ArcGIS GeoEvent Server. Esri recommends that all customers using ArcG",
+    metaOgImage: "https://support.esri.com/content/dam/support/en-us/social/technical-support-social-share.jpg",
+    datePublished: "",
+    domain: window.location.host,
+    environment: "crx3composite,nosamplecontent,publish,cloud\u002Dready",
+    hierarchy1: "Patches And Updates",
+    hierarchy2: "2022",
+    hierarchy3: "",
+    hierarchy4: "",
+    locale: "en-us",
+    resourceType: "esri-sites/components/pages/editablecontentpage",
+    template: "/conf/esri-sites/support/settings/wcm/templates/esri-content-template",
+    language: "en",
+    countryCode: "us",
+    tags: "adobe\u002Danalytics\u002D\u002D\u002Donly\u002Dfor\u002Dsites:page\u002Dtype\/support",
+  })
+</script>
+  <script type="text/javascript">
+  window.storeVariables = Object.assign({}, window.storeVariables, {
+    eCommUrl: "https://support.esri.com/api/ecomm",
+    lookupUrl: "https://ecomm-api.esri.com/lookup",
+    accountsUrl: "https://support.esri.com/en-us/signin",
+    checkoutUrl: "https://support.esri.com/checkout",
+    cartUrl: "https://support.esri.com/en-us/store/cart",
+    customerNumberUrl: "https://support.esri.com/en-us/store/customer-number",
+  })
+</script>
+  <meta name="color theme" content="62b346"> <!-- /* Clientlibs */ -->
+  <link rel="stylesheet" href="/etc.clientlibs/esri-sites/clientlibs/components.css" type="text/css">
+  <script type="text/javascript" src="//assets.adobedtm.com/2d251f50426c/e52f833be42a/launch-EN26af1ee4ef084984926fd80d1cb93835.min.js"></script>
+  <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/event-detail/clientlibs.css" type="text/css">
+ </head>
+ <body class="editablecontentpage page basicpage support-chat" id="editablecontentpage-7d7ba2187a" data-instant-intensity="viewport">
+  <div class="cmp-page__skiptomaincontent"><a class="cmp-page__skiptomaincontent-link" href="#main-content">Skip to main content</a>
+  </div>
+  <link rel="stylesheet" href="/etc.clientlibs/core/wcm/components/page/v2/page/clientlibs/site/skiptomaincontent.css" type="text/css">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/components/global-nav/css/gn.css">
+  <script src="https://webapps-cdn.esri.com/CDN/components/global-nav/js/gn.js"></script>
+  <header id="globalnav" aria-label="Main" class="calcite-mode-light"></header>
+  <main id="main-content">
+   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    <div class="local-navigation aem-GridColumn aem-GridColumn--default--12">
+     <nav id="second-nav" domain="" navtype="existingNavigation" path="/content/support/en-us/overview"></nav>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-4
+  padding-trailer-2
+  has-background
+  has-background--color
+  
+  has-background--cover
+  
+  " style="--bg-color: #EDF8FF;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-90a80b2087" class="cmp-container">
+        <div class="experiencefragment">
+         <div class="xf-content-height">
+          <div class="root responsivegrid">
+           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+            <div class="simple-search aem-GridColumn aem-GridColumn--default--12">
+             <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.css" type="text/css">
+             <script defer src="/etc.clientlibs/esri-sites/components/content/simple-search/clientlibs.js"></script>
+             <div class="sra-search-field">
+              <form id="sraForm" data-search-path="https://support.esri.com/en-us/search"><calcite-input placeholder="Search" icon="magnifying-glass" scale="l"></calcite-input>
+              </form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-0
+  trailer-0
+  padding-leader-2
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+      <div class="grid-container ">
+       <div id="container-1491dc339f" class="cmp-container">
+        <div class="columnsystem">
+         <link rel="stylesheet" href="/etc.clientlibs/esri-sites/components/layouts/columnsystem/clientlibs.css" type="text/css">
+         <div class="column-10 tablet-column-8 phone-column-6 trailer-2" data-aem-columnsys="column-10 trailer-2">
+          <div id="container-bddf485681" class="cmp-container">
+           <div class="esri-text">
+            <div class="esri-text-container">
+             <div data-icon="/content/dam/esrisites/en-us/common/icons/meridian-/app-update-64.svg" class="esri-text__iconContainer">
+              <svg id="icon-ui-svg" class="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 64 64">
+               <path d="M37 50.626l-9.97 4.72L6.1 48.813V16.472l20.87-9.817 20.93 6.47v16.93c-.27.024-.535.06-.8.1v-16.44L27.03 7.51 6.9 16.979v31.247l20.07 6.262L37 49.741zM59.1 43a10.082 10.082 0 0 1-18.904 4.9H47v-.8h-7.9V55h.8v-6a10.9 10.9 0 0 0 20-6zm-20.2 0h-.8a10.9 10.9 0 0 1 20-6v-6h.8v7.9H51v-.8h6.804A10.082 10.082 0 0 0 38.9 43z" id="icon-ui-svg--base" />
+              </svg>
+             </div>
+             <p class="esri-text__category" id="dde049c313de7519fd132c8e93df5ac098204041858939e0d55bc142b6212055">Patches and updates</p>
+             <h1 class="esri-text__title" aria-describedby="dde049c313de7519fd132c8e93df5ac098204041858939e0d55bc142b6212055">ArcGIS GeoEvent Server 10.6.1 Patch 3</h1>
+            </div>
+           </div>
+           <div class="raw-html-for-js-app">
+            <div style="background-color:white; padding-top: 10px"><calcite-chip scale="m" appearance="solid" color="grey">
+              Published: March 18, 2022
+             </calcite-chip>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="separator">
+         <hr class="separator full-width left-align">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+      <div class="grid-container ">
+       <div id="container-b815384e3c" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-6 tablet-column-12 phone-column-12" data-aem-columnsys="column-6">
+          <div id="container-ce106b1ac7" class="cmp-container">
+           <nav data-cmp-is="toc" class="esri-toc">
+            <div class="cmp-toc__content" id="tableofcontents-3c6dcfc7df">
+             <ul>
+              <li><a href="#summary">Summary</a></li>
+              <li><a href="#description">Description</a></li>
+              <li><a href="#enhancements-and-issues-addressed-with-this-patch">Enhancements and Issues Addressed with this Patch</a></li>
+              <li><a href="#installation-instructions-for-windows">Installation Instructions for Windows</a></li>
+              <li><a href="#installation-instructions-for-linux">Installation Instructions for Linux</a></li>
+              <li><a href="#getting-help">Getting Help</a></li>
+             </ul>
+            </div>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="columnsystem">
+         <div class="column-18" data-aem-columnsys="column-18">
+          <div id="container-df86d89bba" class="cmp-container">
+           <div class="esri-title">
+            <div id="title-1521ae7f0b" class="cmp-title">
+             <h3 class="cmp-title__text" id="summary">Summary</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-7a99569bf5" class="cmp-text">
+             This patch includes enhancements and addresses issues, including multiple security vulnerabilities found in log4j distributed with ArcGIS GeoEvent Server. Esri recommends that all customers using ArcGIS GeoEvent Server 10.6.1 apply this patch.<br><br>
+            </div>
+           </div>
+           <div class="esri-title">
+            <div id="title-328641cf84" class="cmp-title">
+             <h3 class="cmp-title__text" id="description">Description</h3>
+            </div>
+           </div>
+           <div class="esri-text">
+            <div id="text-131304a9e1" class="cmp-text">
+             <ul>
+              <li>You must clear the browser cache after this patch is installed to properly load the updated GeoEvent Manager User Interface.</li>
+              <li>ArcGIS GeoEvent Server 10.6.1 must be installed before you can install this patch.</li>
+              <li>It is recommended to create a backup of your GeoEvent Server configuration prior to installation of the patch.</li>
+              <li>ArcGIS GeoEvent Server Patches cannot be uninstalled. To roll back a patch requires a fresh install of GeoEvent Server.</li>
+             </ul>
+             <h3 id="enhancements-and-issues-addressed-with-this-patch">Enhancements and Issues Addressed with this Patch</h3>
+             <ul>
+              <li>BUG-000145348: Update GeoEvent Server to replace unpatched Log4j libraries.</li>
+             </ul>
+             <p><br> To avoid conflicts with previous releases and patches, the following issues are also addressed with this patch:</p>
+             <ul>
+              <li>BUG-000131860: Value for inbound adapter's SpatialReferenceField property is not populated when importing an XML snapshot of a GeoEvent Server configuration.</li>
+              <li>BUG-000120348: Stream Services encountering dropped events and instability when processing high complexity or high velocity data streams.</li>
+              <li>BUG-000118323: Event throughput degradation.</li>
+              <li>BUG-000119717: GeoEvent Service validation fails to catch loops in the service event processing pipeline.</li>
+              <li>BUG-000116360: Connectivity to the spatiotemporal big data store is lost when connection info can't be fetched or created from a data store connection after a sync.</li>
+              <li>BUG-000109318: Unable to connect the data store connection in ArcGIS GeoEvent manager to a portal configured with a Public Key Infrastructure (PKI) authentication.</li>
+              <li>BUG-000117250: Stream Service GeoFence Sync Rule does not start IF the layer is not ready in the DataStore Cache.</li>
+              <li>BUG-000117249: System instability observed when using stream services to synchronize geofences.</li>
+              <li>BUG-000117248: GoEvent won't stop promptly when there is a sync rule configured using stream service.</li>
+              <li>BUG-000114501: Deserialization issue in the jackson-databind libraries.</li>
+             </ul>
+             <h3 id="installation-instructions-for-windows">Installation Instructions for Windows</h3>
+             <p style="	margin-left: 40.0px;
+">Any changes made to the configuration or property files in GeoEvent/etc or GeoEvent/gateway/etc will need to be reapplied to the new files after the patch is installed. The patch will overwrite the files in these locations. &nbsp;</p>
+             <table>
+              <tbody>
+               <tr>
+                <td><b>File</b></td>
+                <td><b>Checksum (Sha256)</b></td>
+               </tr>
+               <tr>
+                <td><a href="https://gisupdates.esri.com/GeoEvent/QFEs/GE_1061/ArcGISGeoEvent_1061_Patch3.exe">ArcGISGeoEvent_1061_Patch3.exe</a></td>
+                <td>a724dc715a27a21ed30dfae3f9303a360bd6ca5b17b0ed6c9f1f5d7f60c66a36</td>
+               </tr>
+              </tbody>
+             </table>
+             <p>&nbsp;</p>
+             <ol>
+              <li>Login with an Administrator Windows account.</li>
+              <li>Download the patch to a location other than your ArcGIS installation location.</li>
+              <li>Double-click <b>ArcGISGeoEvent_1061_Patch3.exe</b> to extract the ArcGIS GeoEvent 10.6.1 Patch 3 windows setup.</li>
+              <li>Browse to the extraction location and double-click <b>Setup.exe</b> to launch the setup program.</li>
+              <li>Open the GeoEvent Manager to ensure your inputs, outputs, and GeoEvent Services have been started. If they are not, restart them in the GeoEvent Manager.</li>
+             </ol>
+             <h3>&nbsp;</h3>
+             <h3 id="installation-instructions-for-linux">Installation Instructions for Linux</h3>
+             <p style="	margin-left: 40.0px;
+">Any changes made to the configuration or property files in GeoEvent/etc or GeoEvent/gateway/etc will need to be reapplied to the new files after the patch is installed. The patch will overwrite the files in these locations.</p>
+             <table>
+              <tbody>
+               <tr>
+                <td><b>File</b></td>
+                <td><b>Checksum (SHA256)</b></td>
+               </tr>
+               <tr>
+                <td><a href="https://gisupdates.esri.com/GeoEvent/QFEs/GE_1061/GeoEvent-10.6.1-Patch3.tar.gz">GeoEvent-10.6.1-Patch3.tar.gz</a></td>
+                <td>fe86e8721e978936c50aa4bb9931c7bc8d51bf48922e92b98d2a34fec23007f7</td>
+               </tr>
+              </tbody>
+             </table>
+             <p>&nbsp;</p>
+             <ol>
+              <li>Log in as the user that installed ArcGIS Server.&nbsp; &nbsp; &nbsp;<b>Note:</b> For the Amazon AMI this is the user <b>arcgis</b>.</li>
+              <li>Download the patch to a location other than your ArcGIS installation location.</li>
+              <li>Extract the package:&nbsp; &nbsp; % tar -xzvf GeoEvent-10.6.1-Patch3.tar.gz</li>
+              <li>Stop the GeoEvent daemon services.</li>
+              <li>Start the installation and wait for it to complete:&nbsp; &nbsp; % ./GeoEvent/Patch.sh</li>
+              <li>Delete the contents of the GeoEvent Server data folder.&nbsp; &nbsp;% rm -rf GeoEvent/data/*</li>
+              <li>After the setup is complete, restart the GeoEvent daemon services.</li>
+              <li>Open the GeoEvent Manager to ensure your inputs, outputs, and GeoEvent Services have been started. If they are not, restart them in the GeoEvent Manager</li>
+             </ol>
+             <p>&nbsp;</p>
+             <p><a name="idsp" id="idsp"></a>How to identify which ArcGIS products are installed<br></p>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>To determine which ArcGIS products are installed, choose the appropriate version of the PatchFinder utility for your environment and run it from your local machine. PatchFinder will list products, hot fixes, and patches installed on your local machine.</p>
+              <div style="	margin-left: 20.0pt;
+">
+               <ul>
+                <li><a href="http://downloads.esri.com/Support/downloads/other_/PatchFinder.exe">PatchFinder for Windows</a></li>
+                <li><a href="http://downloads.esri.com/Support/downloads/other_/PatchFinder.tar">PatchFinder for Linux/Unix</a></li>
+               </ul>
+              </div>
+              <p>To determine which version of ArcGIS GeoEvent Server is installed append <code>/version.txt</code> to the GeoEvent Manager URL. For example:</p>
+              <div style="	margin-left: 20.0pt;
+">
+               <ul>
+                <li><code>https://localhost:6143/geoevent/manager/version.txt</code></li>
+               </ul>
+              </div>
+             </div>
+             <h3 id="getting-help"><a name="help" id="help"></a>Getting Help</h3>
+             <div style="	margin-left: 20.0pt;
+">
+              <p>Domestic sites, please contact Esri Technical Support at 1-888-377-4575, if you have any difficulty installing thispatch. International sites, please contact your local&nbsp;<a href="http://www.esri.com/about-esri/offices/index.html">Esri software distributor</a>.</p>
+             </div>
+            </div>
+           </div>
+           <div class="separator">
+            <hr class="separator full-width left-align">
+           </div>
+           <div class="esri-text">
+            <div id="text-b7ef72ef8f" class="cmp-text">
+             <p><br> Download ID:8002<br></p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+     <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+      <div class="grid-container ">
+       <div id="container-dbc42c60ed" class="cmp-container">
+        <div class="columnsystem">
+         <div class="column-12 pre-6" data-aem-columnsys="column-12">
+          <div id="container-aebab31b8a" class="cmp-container">
+           <div class="experiencefragment">
+            <div class="xf-content-height">
+             <div class="root responsivegrid">
+              <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+               <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+                <style>
+#feedback{
+    text-align: center;
+}
+
+#feedback .withborder{
+border-bottom: 1px solid #cacaca;
+}
+#feedback .esri-title,  .raw-html-for-js-app{
+display:inline-block;
+}
+#feedback .technical-feedback-top .cmp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+flex-wrap: wrap;
+}
+
+
+.feedback-link{
+margin-bottom: 0;
+    padding-top: 13px;
+}
+
+.more-help-section svg{
+height:auto;
+width:48px;
+}
+</style>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-0
+  trailer-2
+  padding-leader-0
+  padding-trailer-0
+  has-background
+  has-background--
+  
+  has-background--cover
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: center center;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-b3aee25f4e" class="cmp-container">
+                   <div class="columnsystem">
+                    <div class="column-12" data-aem-columnsys="column-12">
+                     <div id="container-b81dfb985a" class="cmp-container">
+                      <div class="raw-html-for-js-app">
+                       <style>
+
+.esri-technical-info-contact {
+    margin: var(--space-4) 0 var(--space-16);
+    padding-block-end: var(--space-10);
+    background:  #edf8ff;
+}
+
+.esri-technical-info-contact .feedback-section {
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid var(--calcite-ui-border-1);
+    padding-bottom: var(--space-6);
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section {
+        flex-direction: row;
+    }
+}
+.esri-technical-info-contact .feedback-section span {
+    margin-right: var(--space-4);
+}
+.esri-technical-info-contact .feedback-section .feedback-section-click {
+    text-align: center;
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-click {
+        border-right: 1px solid var(--calcite-ui-border-1);
+        padding-inline-end: var(--space-8);
+    }
+}
+.esri-technical-info-contact .feedback-section .feedback-section-email {
+    text-align: center;
+    padding-top: var(--space-3);
+}
+@media (min-width: 760px) {
+    .esri-technical-info-contact .feedback-section .feedback-section-email {
+        padding-inline-start: var(--space-8);
+        padding-top: 0;
+    }
+}
+.esri-technical-info-contact .more-help-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 760px) {
+    .esri-technical-info-contact .more-help-section {
+        flex-direction: row;
+    }
+}
+
+.esri-technical-info-contact .more-help-section div {
+    flex-basis: 50%;
+    text-align: center;
+    padding-block-start:var(--space-10);
+}
+
+.esri-technical-info-contact .more-help-section img,
+.esri-technical-info-contact .more-help-section svg {
+    width: 48px;
+    fill: var(--theme-color-secondary);
+}
+
+  </style>
+                       <div class="esri-technical-info column-24">
+                        <div class="esri-technical-info-details column-18">
+                         <div class="esri-technical-info-contact">
+                          <div class="more-help-section">
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svgz" viewbox="0 0 48 48">
+                             <path d="M20 12.086C9.027 12.086.1 18.176.1 25.662c0 4 2.483 7.504 7.185 10.151l-2.275 6.34 10.31-3.596c.538.066 3.179.38 4.68.38 11.159 0 19.9-5.83 19.9-13.275 0-7.486-8.927-13.576-19.9-13.576zm0 26.052c-1.592 0-4.644-.383-4.674-.387l-.093-.011-8.904 3.106 1.94-5.406-.302-.164C4.743 33.522.9 30.43.9 25.662c0-7.044 8.568-12.776 19.1-12.776s19.1 5.732 19.1 12.776c0 6.996-8.39 12.476-19.1 12.476zm23.335-23.055l.47.646-2.424 1.767-.47-.646zm-7.517-2.822l-.681-.419 1.57-2.556.681.42zM47 24.101v.799h-3v-.8zm-27.5.374a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0zM9.5 24.475a1.025 1.025 0 1 0 1.025 1.025A1.026 1.026 0 0 0 9.5 24.475zM9.275 25.5a.225.225 0 1 1 .45 0c0 .248-.45.248-.45 0zM29.5 24.475a1.025 1.025 0 1 0 1.025 1.025 1.026 1.026 0 0 0-1.025-1.025zm-.225 1.025a.225.225 0 0 1 .45 0c0 .248-.45.248-.45 0z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Get help from ArcGIS experts</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/contact.html">
+                             Contact technical support
+                            </calcite-link>
+                           </div>
+                           <div>
+                            <svg id="icon-ui-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
+                             <path d="M23.138 37l-.55 1.1h3.823l-.55-1.1h.895l.95 1.9h-6.412l.95-1.9zm19.96-1.9H6v.8h37.099zm-8.09-14.2H37v-.8h-1.993zM46.9 37.474V39.5a4.405 4.405 0 0 1-4.4 4.4h-36a4.405 4.405 0 0 1-4.4-4.4v-2.026h.021a3.374 3.374 0 0 1 .283-1.38l7.27-16A3.405 3.405 0 0 1 12.77 18.1h1.237v.8H12.77a2.602 2.602 0 0 0-2.367 1.524l-7.27 16A2.6 2.6 0 0 0 5.499 40.1h38.002a2.6 2.6 0 0 0 2.366-3.676l-7.27-16A2.602 2.602 0 0 0 36.23 18.9h-1.223v-.8h1.223a3.405 3.405 0 0 1 3.095 1.993l7.27 16a3.372 3.372 0 0 1 .284 1.38zm-.818 2.197a3.362 3.362 0 0 1-2.581 1.229H5.499a3.364 3.364 0 0 1-2.581-1.229 3.595 3.595 0 0 0 3.582 3.43h36a3.595 3.595 0 0 0 3.582-3.43zM12 20.9h2.007v-.8H12zM24.507.1c-5.495 0-8.4 2.183-8.4 6.313v16.329l8.4 8.455 8.4-8.455V6.412c0-4.13-2.905-6.312-8.4-6.312zm7.6 22.312l-7.6 7.65-7.6-7.65v-16c0-3.657 2.557-5.512 7.6-5.512s7.6 1.855 7.6 5.513zM24.506 5.1a4.4 4.4 0 1 0 4.4 4.4 4.405 4.405 0 0 0-4.4-4.4zm0 8a3.6 3.6 0 1 1 3.6-3.6 3.604 3.604 0 0 1-3.6 3.6z" id="icon-ui-svg--base" />
+                            </svg>
+                            <p class="margin-bottom--1">Download the Esri Support App</p> <calcite-link class="esri-font--1" role="presentation" calcite-hydrated="" href="/content/support/en-us/app.html">
+                             Go to download options
+                            </calcite-link>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="calcite-container aem-GridColumn aem-GridColumn--default--12">
+                <div class="
+  leader-
+  trailer-
+  padding-leader-
+  padding-trailer-
+  has-background
+  has-background--
+  
+  
+  
+  " style=" ;
+     ;
+    --bg-img: url();
+    --bg-img-position: ;
+     ;">
+                 <div class="grid-container ">
+                  <div id="container-9e9fdcead7" class="cmp-container">
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="raw-html-for-js-app aem-GridColumn aem-GridColumn--default--12">
+     <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/css/support-ai-chatbot.css">
+     <div id="support-ai-chatbot"></div>
+     <script defer src="https://webapps-cdn.esri.com/CDN/react/support-ai-chatbot/static/js/support-ai-chatbot.js"></script>
+    </div>
+   </div>
+  </main>
+  <script defer src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+  <script defer src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/container.js"></script>
+  <script defer src="/etc.clientlibs/esri-sites/clientlibs/components.js"></script>
+  <div hidden>
+   <span id="new-window">opens in new window</span>
+  </div> <calcite-modal id="page-modal" scale="m" width="m" aria-modal="true" role="dialog">
+   <div slot="header"></div>
+   <div slot="content"></div> 
+  </calcite-modal>
+  <div id="live-region" class="assistText" aria-live="polite"></div>
+  <script src="https://webapps-cdn.esri.com/CDN/packages/instant.page/instantpage.min.js"></script>
+  <script src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"></script>
+  <script type="text/javascript">_satellite.pageBottom();</script>
+  <script src="/etc.clientlibs/esri-sites/clientlibs/clientlib-dependencies.js"></script>
+ </body>
+</html>
